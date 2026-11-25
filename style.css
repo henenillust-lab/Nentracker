@@ -71,6 +71,16 @@ main, .foot { position: relative; z-index: 1; }
 .sheet h1 { font-size: var(--t-l); max-width: 11em; }
 .lead { margin-top: 36px; max-width: 30em; }
 .sheet .btn { margin-top: 36px; min-width: 240px; }
+/* 첫 받기 단추 (2026-11-26 헤넨 님 참고 그림: 둥근 네모 · 주황 그라데이션 · 은은한 빛 · 받기 아이콘 + 크기) */
+.btn-dl {
+  gap: 12px; min-height: 60px; padding: 0 30px; border-radius: 16px; font-weight: 750; letter-spacing: -0.01em;
+  background: linear-gradient(100deg, #ff9234 0%, #ffa94d 55%, #ffbd6b 100%); /* taste-skill-ignore: 헤넨 님이 고른 모양 */
+  box-shadow: 0 10px 28px rgba(255, 146, 52, .28), inset 0 1px 0 rgba(255, 255, 255, .28); /* taste-skill-ignore: 헤넨 님이 고른 모양 */
+  transition: filter .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.btn-dl:hover { background: linear-gradient(100deg, #ff9a40 0%, #ffb25c 55%, #ffc57a 100%); box-shadow: 0 14px 34px rgba(255, 146, 52, .36), inset 0 1px 0 rgba(255, 255, 255, .32); } /* taste-skill-ignore: 헤넨 님이 고른 모양 */
+.btn-dl:active { transform: scale(.97); }
+.btn-dl svg { flex: none; }
 .meta { margin-top: 18px; font-size: var(--t-s); color: var(--muted); }
 .block { padding: 0 var(--pad); margin-top: clamp(120px, 16svh, 200px); }
 .block h2 { font-size: var(--t-l); max-width: 12em; }
