@@ -75,12 +75,37 @@ main, .foot { position: relative; z-index: 1; }
 .btn-dl {
   gap: 12px; min-height: 60px; padding: 0 30px; border-radius: 16px; font-weight: 750; letter-spacing: -0.01em;
   background: linear-gradient(100deg, #ff9234 0%, #ffa94d 55%, #ffbd6b 100%); /* taste-skill-ignore: 헤넨 님이 고른 모양 */
-  box-shadow: 0 10px 28px rgba(255, 146, 52, .28), inset 0 1px 0 rgba(255, 255, 255, .28); /* taste-skill-ignore: 헤넨 님이 고른 모양 */
-  transition: filter .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28); /* 바깥 그림자 뺌 (2026-11-26 헤넨 님) · 위 가장자리 밝은 줄만 */
+  transition: filter .2s var(--ease), transform .2s var(--ease);
 }
-.btn-dl:hover { background: linear-gradient(100deg, #ff9a40 0%, #ffb25c 55%, #ffc57a 100%); box-shadow: 0 14px 34px rgba(255, 146, 52, .36), inset 0 1px 0 rgba(255, 255, 255, .32); } /* taste-skill-ignore: 헤넨 님이 고른 모양 */
+.btn-dl:hover { background: linear-gradient(100deg, #ff9a40 0%, #ffb25c 55%, #ffc57a 100%); } /* taste-skill-ignore: 헤넨 님이 고른 모양 */
 .btn-dl:active { transform: scale(.97); }
 .btn-dl svg { flex: none; }
+
+/* 미니 화면 끌기 · 창 조립 체험 (실제 앱 그림 낱장) */
+.mini-desk-fig { margin: 0; }
+.mini-desk { position: relative; height: clamp(440px, 62svh, 600px); border-radius: var(--r); background: #cdd3de; overflow: hidden; touch-action: none; }
+.desk-app { position: absolute; left: 4%; top: 5%; width: 76%; height: auto; border-radius: 10px; pointer-events: none; user-select: none; }
+.mini-stack { position: absolute; left: 62%; top: 10%; cursor: grab; display: flex; flex-direction: column; user-select: none; outline: none; filter: drop-shadow(0 10px 18px rgba(21, 24, 33, .22)); } /* taste-skill-ignore: 떠 있는 창 (앱 미니 화면) */
+.mini-stack.drag { cursor: grabbing; }
+.mini-stack:focus-visible { outline: 3px solid #3d56e0; outline-offset: 4px; border-radius: 12px; }
+.mini-stack img { display: block; width: var(--w, 200px); height: auto; pointer-events: none; -webkit-user-drag: none; }
+.mini-stack img + img { margin-top: var(--ov, -1px); }
+.mini-stack img.in { animation: dockIn .28s cubic-bezier(.3, 1.3, .5, 1); }
+@keyframes dockIn { from { transform: translateY(-10px); opacity: 0; } to { transform: none; opacity: 1; } }
+.mini-desk-fig figcaption { padding: 14px 6px 4px; font-size: var(--t-s); color: var(--l-muted); }
+
+/* 40초 영상 (트레일러 최종본) */
+.vid-wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: center; }
+.vid-text { grid-column: 1 / 5; }
+.vid-box { grid-column: 5 / 13; margin: 0; justify-self: center; width: min(100%, 680px); }
+.vid-box video { width: 100%; height: auto; border-radius: var(--r); background: #000; aspect-ratio: 1; }
+@media (max-width: 900px) { .vid-wrap { grid-template-columns: 1fr; } .vid-text, .vid-box { grid-column: 1 / -1; } }
+
+/* 리포트 미리 보기 창 (스크롤) */
+.app-win { height: clamp(460px, 68svh, 680px); border-radius: 10px; overflow: hidden; background: var(--l-bg); }
+.app-scroll { height: 100%; overflow-y: auto; scroll-behavior: smooth; overscroll-behavior: contain; scrollbar-width: thin; }
+.app-scroll img { width: 100%; height: auto; border-radius: 0; display: block; }
 
 /* 뽀모도로 → 보상 흐름 (2026-11-26 헤넨 님 '뽀모 > 보상으로 이어지는 시스템') */
 .flow-title { margin-top: 88px; font-size: var(--t-m); font-weight: 750; letter-spacing: -0.02em; }
@@ -105,12 +130,11 @@ main, .foot { position: relative; z-index: 1; }
   .scr-nav { width: 34px; height: 34px; font-size: 19px; }
   .scr-nav.prev { left: 6px; }
   .scr-nav.next { right: 6px; }
-  .scr-count { bottom: 6px; font-size: 12px; padding: 2px 9px; }
 }
 
 /* 실제 화면 넘기기: 그림 누르면 다음 · 양옆 ‹ › · n / 전체 (2026-11-26 헤넨 님) */
 .scr-hold { position: relative; }
-.scr-hold img { cursor: pointer; }
+.scr-hold img { cursor: zoom-in; }
 .scr-nav {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
   width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
@@ -122,10 +146,11 @@ main, .foot { position: relative; z-index: 1; }
 .scr-nav:hover { background: #2b313c; }
 .scr-nav:active { transform: translateY(-50%) scale(.92); }
 .scr-hold:hover .scr-nav, .scr-nav:focus-visible { opacity: .92; }
-.scr-count {
-  position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 2;
-  background: #151821; color: #fff; font-size: 13px; font-weight: 700; padding: 3px 11px; border-radius: 999px; opacity: .85; pointer-events: none;
-}
+/* 번호 = 그림 아래 설명 줄 오른쪽 (그림을 가리지 않음) */
+.scr-foot { display: flex; align-items: flex-start; gap: 16px; }
+.scr-foot figcaption { flex: 1; min-width: 0; }
+.scr-count { flex: none; padding-top: 14px; padding-right: 6px; font-size: var(--t-s); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.band-light .scr-count { color: var(--l-muted); }
 @media (hover: none) { .scr-nav { opacity: .85; } }
 .meta { margin-top: 18px; font-size: var(--t-s); color: var(--muted); }
 .block { padding: 0 var(--pad); margin-top: clamp(120px, 16svh, 200px); }
@@ -265,8 +290,11 @@ main, .foot { position: relative; z-index: 1; }
 .fr:active .pic img { transform: scaleY(.92); }
 .fr b { font-size: var(--t-m); font-weight: 750; letter-spacing: -0.02em; line-height: 1.25; }
 .fr b small { font-size: var(--t-s); font-weight: 600; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
-.fr .desc { font-size: var(--t-s); color: var(--muted); line-height: 1.55; }
-.fr .say { font-size: var(--t-s); font-weight: 650; color: var(--ink); background: var(--field); border-radius: 12px; padding: 8px 12px; justify-self: start; }
+.fr b small { color: #ffc58f; }
+.fr .intro { font-size: var(--t-b); font-weight: 600; color: var(--ink); line-height: 1.5; min-height: 3em; }
+.fr .intro.swap { animation: swapIn .3s var(--ease); }
+@keyframes swapIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.fr .tag { font-size: 13px; font-weight: 650; color: var(--muted); background: var(--field); border-radius: 999px; padding: 3px 10px; justify-self: start; }
 .friends-note { margin-top: 40px; color: var(--muted); max-width: 40em; }
 
 /* 테마 */
@@ -283,7 +311,15 @@ main, .foot { position: relative; z-index: 1; }
 .quiet { margin-top: 40px !important; font-size: var(--t-m); font-weight: 650; }
 
 /* 만든 사람 */
-.letter { max-width: 720px; margin: 0 auto; }
+.letter { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 240px 1fr; column-gap: 48px; align-items: start; }
+.letter > * { grid-column: 2; }
+.letter-pet { grid-column: 1 !important; grid-row: 1 / span 6; margin: 0; background: var(--l-card); border-radius: var(--r); padding: 24px; display: grid; place-items: center; }
+.letter-pet img { width: 100%; image-rendering: pixelated; }
+@media (max-width: 900px) {
+  .letter { grid-template-columns: 1fr; }
+  .letter > *, .letter-pet { grid-column: 1 !important; grid-row: auto !important; }
+  .letter-pet { width: 200px; margin-bottom: 24px; }
+}
 .letter p { margin-top: 20px; color: var(--l-muted); }
 .letter .sign { margin-top: 32px; font-weight: 700; color: var(--l-ink); }
 
@@ -375,8 +411,37 @@ main, .foot { position: relative; z-index: 1; }
   .foot > span:last-child { justify-self: start; text-align: left; }
 }
 @media (max-width: 560px) { .idx { grid-template-columns: 1fr; } }
+
+/* 오늘의 캠핑 영수증: 앱이 만든 영수증 세 장을 밤하늘 위에 종이처럼 늘어놓음 · 누르면 크게 */
+.rc-head { max-width: 780px; }
+.rc-desk { display: flex; justify-content: center; align-items: center; gap: clamp(24px, 3.6vw, 64px); margin: 64px 0 0; }
+.rc { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.rc-open { all: unset; display: block; cursor: zoom-in; border-radius: 6px; }
+.rc-open:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; }
+.rc img { display: block; height: auto; filter: drop-shadow(0 22px 34px rgba(0, 0, 0, .5)); transform: rotate(var(--rot, 0deg)); transition: transform .35s var(--ease); } /* taste-skill-ignore */
+.rc-open:hover img { transform: rotate(0deg) translateY(-6px); }
+.rc-basic { --rot: -2deg; } .rc-basic img { width: clamp(230px, 21vw, 310px); }
+.rc-simple { --rot: 1.5deg; } .rc-simple img { width: clamp(240px, 25vw, 360px); }
+.rc-site { --rot: -1deg; } .rc-site img { width: clamp(240px, 25vw, 360px); }
+.rc figcaption { text-align: center; color: var(--muted); font-size: var(--t-s); line-height: 1.45; }
+.rc figcaption b { display: block; color: var(--ink); font-size: var(--t-b); font-weight: 750; }
+.rc-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 40px; margin-top: 64px; }
+.zoom-big { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 94svh; overflow: visible; cursor: zoom-out; }
+.zoom-big::backdrop { background: rgba(8, 10, 14, .82); }
+.zoom-big img { display: block; max-width: 94vw; max-height: 86svh; width: auto; height: auto; margin: 0 auto; }
+.zoom-big p { margin: 12px 0 0; text-align: center; color: var(--muted); font-size: var(--t-s); }
+@media (max-width: 900px) {
+  /* 좁은 화면: 옆으로 넘기지 않고 기본형은 왼쪽에 길게, 심플형 · 캠핑장형은 오른쪽에 위아래로 */
+  .rc-desk { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 28px 18px; margin-top: 40px; align-items: start; }
+  .rc-basic { grid-row: 1 / 3; }
+  .rc img, .rc-basic img, .rc-simple img, .rc-site img { width: 100%; }
+  .rc { gap: 12px; }
+  .rc-notes { grid-template-columns: 1fr; margin-top: 32px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: 0ms !important; }
   .js .rise { opacity: 1; transform: none; }
 }
+.rc-cap { margin: 28px 0 0; text-align: center; color: var(--muted); font-size: var(--t-s); }
+@media (max-width: 900px) { .rc-cap { text-align: left; margin-top: 8px; } }

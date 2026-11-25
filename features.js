@@ -108,7 +108,18 @@
     });
   });
 
-  /* ═════ 2-1. 그림 누르면 다음 · 양옆 ‹ › · 'n / 전체' (실제 화면 칸 + 테마) ═════ */
+  /* ═════ 2-0. 크게 보기 창 (실제 화면 · 영수증 · 아무 곳이나 누르거나 Esc로 닫힘) ═════ */
+  const zoomDlg = $("#zoomBig");
+  function zoom(im) {
+    if (!im || !zoomDlg || typeof zoomDlg.showModal !== "function") return;
+    let big = zoomDlg.querySelector("img");
+    if (!big) { big = new Image(); zoomDlg.prepend(big); }  // 빈 그림 칸을 HTML에 두지 않음 (누를 때 만듦)
+    big.src = im.currentSrc || im.src; big.alt = im.alt;
+    zoomDlg.showModal();
+  }
+  if (zoomDlg) zoomDlg.addEventListener("click", () => zoomDlg.close());
+
+  /* ═════ 2-1. 그림 누르면 크게 · 양옆 ‹ › 로 넘기기 · 'n / 전체'는 그림 아래 (실제 화면 칸 + 테마) ═════ */
   function addNav(fig, getBtns) {
     const img = fig && $("img", fig);
     if (!img) return;
@@ -125,18 +136,99 @@
     const cnt = document.createElement("span");
     cnt.className = "scr-count";
     cnt.setAttribute("aria-hidden", "true");
-    holder.appendChild(cnt);
+    // 번호는 그림 위가 아니라 그림 아래 설명 줄 오른쪽에 (그림을 가리지 않게 · 2026-11-26 헤넨 님)
+    const foot = document.createElement("div");
+    foot.className = "scr-foot";
+    const cap = $("figcaption", fig);
+    (cap && cap.parentElement === fig ? cap : null) ? fig.insertBefore(foot, cap) : fig.appendChild(foot);
+    if (cap && cap.parentElement === fig) foot.appendChild(cap);
+    foot.appendChild(cnt);
     const cur = () => Math.max(0, getBtns().findIndex((b) => b.getAttribute("aria-selected") === "true"));
     const upd = () => { cnt.textContent = `${cur() + 1} / ${getBtns().length}`; };
     const go = (d) => { const bs = getBtns(); if (!bs.length) return; bs[(cur() + d + bs.length) % bs.length].click(); upd(); };
     prev.addEventListener("click", (e) => { e.stopPropagation(); go(-1); });
     next.addEventListener("click", (e) => { e.stopPropagation(); go(1); });
-    img.addEventListener("click", () => go(1));
-    img.title = "누르면 다음 화면";
+    // 넘기기는 양옆 단추 · 그림을 누르면 크게 (2026-11-26 헤넨 님) · 칸이 그림을 바꿔 끼워도 되게 누른 그림을 씀
+    holder.addEventListener("click", (e) => { if (e.target.tagName === "IMG") zoom(e.target); });
+    $$("img", holder).forEach((im) => { im.title = "누르면 크게 보기"; });
     getBtns().forEach((b) => b.addEventListener("click", () => setTimeout(upd, 0)));
     upd();
   }
   $$("[data-switch]").forEach((box) => addNav($(`[data-screen="${box.dataset.switch}"]`), () => $$("button", box)));
+
+  /* ═════ 2-2. 리포트 미리 보기 창: 스크롤 + 바로 가기 (자리 = report_marks.js, build.py가 그림에서 찾음) ═════ */
+  (function reportScroll() {
+    const box = $("#rpScroll"), img = $("#rpFull"), jump = $$("#rpJump button");
+    if (!box || !img || !jump.length) return;
+    const M = window.NT_RMARKS || { h: 1, marks: [] };
+    const yOf = (i) => (M.marks[i] != null ? M.marks[i] / M.h : 0) * img.clientHeight;
+    const pick = (i) => jump.forEach((b, j) => b.setAttribute("aria-selected", String(i === j)));
+    jump.forEach((b, i) => b.addEventListener("click", () => {
+      pick(i);
+      box.scrollTo({ top: Math.max(0, yOf(i) - 8), behavior: reduce ? "auto" : "smooth" });
+    }));
+    let tk = 0;
+    box.addEventListener("scroll", () => {
+      clearTimeout(tk);
+      tk = setTimeout(() => {
+        const y = box.scrollTop + box.clientHeight * 0.3;
+        let cur = 0;
+        jump.forEach((_, i) => { if (yOf(i) <= y) cur = i; });
+        pick(cur);
+      }, 80);
+    }, { passive: true });
+  })();
+
+  /* ═════ 2-3. 미니 화면 끌기 · 창 조립 (실제 앱 그림 낱장 · 폭 · 겹침 = widgets.js, build.py가 촬영본에서) ═════ */
+  (function miniStack() {
+    const desk = $("#miniDesk"), st = $("#miniStack"), btns = $$("#miniParts button");
+    if (!desk || !st || !btns.length) return;
+    const WG = window.NT_WIDGETS || { w: 210, ov: 1, last: [] };
+    // 붙은 차례 = 누른 차례 (앱처럼 새로 붙인 창이 맨 아래) · 음악 플레이어는 다른 창과 같이 붙지 않음 (앱: 늘 미니 바로 아래 하나)
+    const order = btns.filter((b) => b.getAttribute("aria-pressed") === "true").map((b) => b.dataset.part);
+    const NAME = { deadline: "마감", pomo: "뽀모도로", todo: "할 일", memo: "메모", player: "음악 플레이어" };
+    const scale = () => (desk.clientWidth < 420 ? 0.95 : 1.15);
+    function place(x, y) {
+      const maxX = desk.clientWidth - st.offsetWidth, maxY = desk.clientHeight - st.offsetHeight;
+      x = clamp(x, 0, Math.max(0, maxX)); y = clamp(y, 0, Math.max(0, maxY));
+      // 가장자리 가까이 가면 착 붙음 (앱처럼)
+      if (x < 14) x = 0; if (maxX - x < 14) x = maxX; if (y < 14) y = 0; if (maxY - y < 14) y = maxY;
+      st.style.left = x + "px"; st.style.top = y + "px";
+    }
+    function render() {
+      const on = order;
+      btns.forEach((b) => b.setAttribute("aria-pressed", String(on.includes(b.dataset.part))));
+      const had = new Set([...st.children].map((i) => i.dataset.k));
+      st.style.setProperty("--w", Math.round(WG.w * scale()) + "px");
+      st.style.setProperty("--ov", -(WG.ov / 2 * scale()).toFixed(2) + "px");  // 겹침은 2배 촬영 px → 화면 px
+      st.textContent = "";
+      const add = (src, k, alt) => { const im = new Image(); im.src = src; im.alt = alt; im.dataset.k = k; im.draggable = false; if (had.size && !had.has(k)) im.classList.add("in"); st.appendChild(im); };
+      add(on.length ? "img/w_mini_top.webp" : "img/w_mini_only.webp", "mini", "미니 화면");
+      on.forEach((k, i) => add(`img/w_dock_${k}${i === on.length - 1 && (WG.last || []).includes(k) ? "_last" : ""}.webp`, k, NAME[k] + " 창"));
+      requestAnimationFrame(() => place(st.offsetLeft, st.offsetTop));
+    }
+    btns.forEach((b) => b.addEventListener("click", () => {
+      const k = b.dataset.part, i = order.indexOf(k);
+      if (i >= 0) order.splice(i, 1);
+      else if (k === "player") order.splice(0, order.length, k);
+      else { const p = order.indexOf("player"); if (p >= 0) order.splice(p, 1); order.push(k); }
+      render();
+    }));
+    let sx = 0, sy = 0, ox = 0, oy = 0, moving = false;
+    st.addEventListener("pointerdown", (e) => { moving = true; st.setPointerCapture(e.pointerId); st.classList.add("drag"); sx = e.clientX; sy = e.clientY; ox = st.offsetLeft; oy = st.offsetTop; });
+    st.addEventListener("pointermove", (e) => { if (moving) place(ox + e.clientX - sx, oy + e.clientY - sy); });
+    const end = () => { moving = false; st.classList.remove("drag"); };
+    st.addEventListener("pointerup", end); st.addEventListener("pointercancel", end);
+    st.addEventListener("keydown", (e) => {
+      const k = { ArrowLeft: [-12, 0], ArrowRight: [12, 0], ArrowUp: [0, -12], ArrowDown: [0, 12] }[e.key];
+      if (k) { e.preventDefault(); place(st.offsetLeft + k[0], st.offsetTop + k[1]); }
+    });
+    window.addEventListener("resize", () => render());
+    render();
+  })();
+
+  /* ═════ 2-4. 영수증 크게 보기 (2-0 창을 같이 씀) ═════ */
+  $$(".rc-open").forEach((b) => b.addEventListener("click", () => zoom(b.querySelector("img"))));
 
   /* ═════ 3. 레퍼런스 보드 체험: 자유 · 웹툰 · 페이지 보기 ═════ */
   (function board() {
@@ -248,21 +340,26 @@
     const ul = $("#friends");
     if (!ul || !D.friends) return;
     D.friends.forEach((f) => {
+      // 소개 한마디(첫 만남 대사) → 누를 때마다 다음 줄 (첫 만남 3줄 → 누를 때 대사)
+      const lines = [...(f.intro || []), ...(f.lines || [])];
+      let k = 0;
       const li = document.createElement("li");
-      li.innerHTML = `<button type="button" class="fr" aria-pressed="false">
+      li.innerHTML = `<button type="button" class="fr" aria-pressed="false" aria-label="${f.name}에게 말 걸기">
         <span class="pic"><img src="img/f_${f.id}.png" width="64" height="64" alt="${f.name} 도트"></span>
-        <b>${f.name}<small>${f.species}</small></b>
-        <span class="desc">${f.desc}</span>
-        <span class="say" aria-live="polite">말투 · ${f.style}</span>
+        <b>${f.name}<small>${f.kw}</small></b>
+        <span class="intro" aria-live="polite">“${lines[0] || ""}”</span>
+        <span class="tag">말투 · ${f.style}</span>
       </button>`;
-      const btn = $("button", li), img = $("img", li), say = $(".say", li);
+      const btn = $("button", li), img = $("img", li), say = $(".intro", li);
       let t = 0;
       btn.addEventListener("click", () => {
-        say.textContent = `“${pick(f.lines)}”`;
+        k = (k + 1) % Math.max(1, lines.length);
+        say.classList.remove("swap"); void say.offsetWidth; say.classList.add("swap");
+        say.textContent = `“${lines[k]}”`;
         btn.setAttribute("aria-pressed", "true");
         img.src = `img/f_${f.id}_happy.png`;
         clearTimeout(t);
-        t = setTimeout(() => { img.src = `img/f_${f.id}.png`; btn.setAttribute("aria-pressed", "false"); }, 2200);
+        t = setTimeout(() => { img.src = `img/f_${f.id}.png`; btn.setAttribute("aria-pressed", "false"); }, 1600);
       });
       ul.appendChild(li);
     });

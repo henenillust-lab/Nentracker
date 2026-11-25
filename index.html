@@ -75,6 +75,20 @@
   </aside>
 </div>
 
+<!-- ═════ 짙은 남회색: 40초 영상 (홍보 트레일러 최종본 · 누르면 재생) ═════ -->
+<section class="band band-slate" id="video" aria-labelledby="h-video">
+  <div class="vid-wrap">
+    <div class="vid-text">
+      <h2 id="h-video">40초로 보는 넨트래커</h2>
+      <p class="lead-p sub">켜 두기만 하면 쌓이는 기록부터 별자리 뽀모도로, 마감, 바탕화면 친구, 이웃 캠핑장까지 한 번에 보여 드려요.</p>
+    </div>
+    <figure class="vid-box">
+      <video id="trailer" src="img/trailer.mp4" poster="img/trailer_poster.webp" width="1080" height="1080" controls playsinline preload="none"
+        aria-label="넨트래커 소개 영상 40초"></video>
+    </figure>
+  </div>
+</section>
+
 <!-- ═════ 밝음: 할 수 있는 것 ═════ -->
 <section class="band band-light" id="features" aria-labelledby="h-features">
   <h2 id="h-features">넨트래커로 할 수 있는 것</h2>
@@ -128,10 +142,12 @@
       <h2 id="h-deadline">마감까지 하루 몫을 나눠요</h2>
       <p class="lead-p">마감일과 남은 분량을 넣으면 쉬는 날을 빼고 하루 몫을 나눠요. 하루 밀려도 남은 날에 조용히 다시 나눠요.</p>
       <div class="sw-btns" role="tablist" aria-label="마감 화면 고르기" data-switch="deadline">
-        <button type="button" role="tab" aria-selected="true" data-src="img/l_sched.webp" data-cap="마감 카드. 웹툰 12화 D-9, 오늘 몫은 채색 4컷이고 ‘계획대로예요’가 떠요.">마감 카드</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_steps.webp" data-cap="콘티 · 선화 · 채색 · 마무리처럼 공정을 나눠 어디까지 왔는지 봐요.">공정 펼치기</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_plus.webp" data-cap="한 컷 끝낼 때마다 ＋를 눌러요. 오늘 몫이 차오르고 남은 날 계산이 바로 바뀌어요.">오늘 몫 ＋</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_done.webp" data-cap="다 끝내면 결산 창에서 마감에 든 시간을 돌아봐요.">다 끝내면</button>
+        <button type="button" role="tab" aria-selected="true" data-src="img/l_sched.webp" data-cap="기본. 마감 카드에 D-day · 진행 · 공정 · 오늘 몫이 한눈에 보여요.">기본</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_new.webp" data-cap="마감 등록 창. 이름 · 분량 · 기간 · 공정을 적고, 세부 설정에서 중요도 · 자체 마감 · 쉬는 요일 · 시간으로 셀 프로그램까지 정해요. ‘마법사로 날짜 계산’으로 기간도 잡아 줘요.">마감 등록 창</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_projects.webp" data-cap="프로젝트별 구분. 마감을 프로젝트 판으로 묶어 색으로 나눠 봐요. 판마다 다음 마감까지 남은 날이 보여요.">프로젝트별 구분</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_plus.webp" data-cap="오늘 몫. 한 컷 끝낼 때마다 ＋를 눌러요. 오늘 몫이 차오르고 남은 날 계산이 바로 바뀌어요.">오늘 몫</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_forecast.webp" data-cap="마감 예측. 실제 작업 속도로 끝나는 날을 다시 재서 ‘지금 속도면 12월 2일에 끝나요’처럼 알려 줘요. 공정 막대에 올리면 계획보다 며칠 이른지도 보여요.">마감 예측</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_done.webp" data-cap="마감 리포트. 다 끝내면 결산 창에서 공정별 · 날마다 든 시간을 분석해 보여 줘요.">마감 리포트</button>
       </div>
       <ul class="feat-list">
         <li>홈 맨 위 띠에 오늘 할 몫이 늘 떠 있어요.</li>
@@ -151,20 +167,53 @@
     <div class="feat-text">
       <h2 id="h-report">리포트가 먼저 알아채요</h2>
       <p class="lead-p">한 달 기록을 관찰 일지처럼 다섯 장으로 보여 줘요. 잘했다 못했다 판정하지 않고, 다음에 해 볼 한 걸음만 권해요.</p>
-      <div class="sw-btns" role="tablist" aria-label="관찰 고르기" data-switch="report">
-        <button type="button" role="tab" aria-selected="true" data-src="img/l_rp0.webp" data-cap="한 달 숫자 셋: 집중한 시간 · 작업 중 다른 데로 간 시간 · 쉰 시간.">한눈에</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp1.webp" data-cap="얼마나: 주마다 도장을 채워요. 가득 차면 하루 목표를 채운 주예요.">얼마나</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp2.webp" data-cap="어떻게: 한 번 앉으면 얼마나 이어 가는지, 평소와 견줘요.">어떻게</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp3.webp" data-cap="언제, 어떤 날: 가장 깊게 몰입하는 때와 유난히 달랐던 요일.">언제, 어떤 날</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp4.webp" data-cap="무엇이 끊었나: 작업하다 다른 데로 간 때만 세요.">무엇이 끊었나</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp5.webp" data-cap="다음 한 걸음: 약한 곳이 보이면 하나만 권하고, 마감 속도도 같이 짚어 줘요.">다음 한 걸음</button>
+      <div class="sw-btns" role="tablist" aria-label="리포트에서 바로 가기" id="rpJump">
+        <button type="button" role="tab" aria-selected="true" data-mark="0">한눈에</button>
+        <button type="button" role="tab" aria-selected="false" data-mark="1">얼마나</button>
+        <button type="button" role="tab" aria-selected="false" data-mark="2">어떻게</button>
+        <button type="button" role="tab" aria-selected="false" data-mark="3">언제, 어떤 날</button>
+        <button type="button" role="tab" aria-selected="false" data-mark="4">무엇이 끊었나</button>
+        <button type="button" role="tab" aria-selected="false" data-mark="5">다음 한 걸음</button>
+        <button type="button" role="tab" aria-selected="false" data-mark="6">그래프</button>
       </div>
+      <ul class="feat-list">
+        <li>카드마다 ‘자세히’를 누르면 근거가 되는 숫자가 그 자리에서 펼쳐져요.</li>
+        <li>오늘 · 어제 · 주간 · 월간 · 연간으로 기간을 바꿔 봐요.</li>
+      </ul>
     </div>
-    <figure class="feat-shot screen" data-screen="report">
-      <img src="img/l_rp0.webp" width="960" height="260" alt="리포트 화면의 숫자 칸 셋" loading="lazy">
-      <figcaption>한 달 숫자 셋: 집중한 시간 · 작업 중 다른 데로 간 시간 · 쉰 시간.</figcaption>
+    <figure class="feat-shot screen" data-screen="report-scroll">
+      <div class="app-win"><div class="app-scroll" id="rpScroll" tabindex="0" aria-label="리포트 미리 보기. 스크롤해서 전체를 봐요"><img id="rpFull" src="img/l_report_full.webp" alt="시험 데이터로 만든 넨트래커 월간 리포트 전체 화면" loading="lazy"></div></div>
+      <figcaption>시험 데이터로 만든 실제 리포트예요. 창 안을 스크롤해 보세요.</figcaption>
     </figure>
   </div>
+</section>
+
+<!-- ═════ 밤하늘: 오늘의 캠핑 영수증 (앱이 만든 실제 영수증 그림 셋 · ui_qt/fx/receipt.py) ═════ -->
+<section class="band band-night" id="receipt" aria-labelledby="h-receipt">
+  <div class="rc-head">
+    <h2 id="h-receipt">오늘 한 일은 영수증 한 장으로</h2>
+    <p class="lead-p">기록 탭이나 캠프 홈에서 ‘오늘의 영수증’을 누르면 오늘 작업 시간, 뽀모도로, 받은 별조각, 캐릭터 한마디가 영수증 한 장에 담겨요. 이미지로 저장하거나 복사해서 바로 올려요.</p>
+  </div>
+  <div class="rc-desk" id="rcDesk">
+    <figure class="rc rc-basic">
+      <button class="rc-open" type="button" aria-label="기본형 영수증 크게 보기"><img src="img/rc_basic.webp" alt="기본형 영수증. 세로로 긴 종이에 오늘 작업 시간, 뽀모도로, 받은 것, 캐릭터 한마디" loading="lazy"></button>
+      <figcaption><b>기본형</b>세로로 길게, 하루를 줄줄이</figcaption>
+    </figure>
+    <figure class="rc rc-simple">
+      <button class="rc-open" type="button" aria-label="심플형 영수증 크게 보기"><img src="img/rc_simple.webp" alt="심플형 영수증. 정사각 종이에 오늘 작업 시간과 캐릭터" loading="lazy"></button>
+      <figcaption><b>심플형</b>정사각 한 장, 핵심만</figcaption>
+    </figure>
+    <figure class="rc rc-site">
+      <button class="rc-open" type="button" aria-label="캠핑장형 영수증 크게 보기"><img src="img/rc_site.webp" alt="캠핑장형 영수증. 위에는 내 캠핑장 장면, 아래에는 영수증 조각" loading="lazy"></button>
+      <figcaption><b>캠핑장형</b>내 캠핑장 장면과 같이</figcaption>
+    </figure>
+  </div>
+  <p class="rc-cap">시험 데이터로 만든 실제 영수증이에요. 누르면 크게 보여요.</p>
+  <ul class="feat-list rc-notes">
+    <li><b>날짜</b>오늘 · 어제는 물론 지난 7일 · 30일 · 직접 고른 기간도 한 장으로 묶어요.</li>
+    <li><b>넣을 것</b>많이 쓴 앱 이름과 딴짓 시간은 처음부터 꺼 두었어요. 넣고 뺄 칸은 내가 골라요.</li>
+    <li><b>저장</b>1080px 이미지로 저장하거나 클립보드에 복사해 SNS에 바로 붙여요.</li>
+  </ul>
 </section>
 
 <!-- ═════ 밝음: 셀프 출퇴근 ═════ -->
@@ -174,10 +223,7 @@
       <h2 id="h-work">혼자 일해도 출근 · 퇴근</h2>
       <p class="lead-p">프리랜서와 1인 작업자를 위한 셀프 출퇴근이에요. 정한 시각에 출근을 묻고, 쉬는 시간 · 야근 · 휴가까지 근태 기록부에 도장으로 남겨요.</p>
       <div class="sw-btns" role="tablist" aria-label="출퇴근 화면 고르기" data-switch="work">
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_work_before.webp" data-cap="출근 전. 홈 맨 위 카드에서 출근을 눌러요.">출근 전</button>
-        <button type="button" role="tab" aria-selected="true" data-src="img/l_work_card.webp" data-cap="근무 중. 오늘 근무 시간과 퇴근까지 남은 시간이 떠요.">근무 중</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_work_rest.webp" data-cap="쉬는 중. 쉬는 시간은 근무 시간에서 빠져요.">쉬는 중</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_work_off.webp" data-cap="퇴근 뒤. 퇴근 뒤 놀이는 딴짓으로 세지 않아요.">퇴근 뒤</button>
+        <button type="button" role="tab" aria-selected="true" data-src="img/l_work_loop.webp" data-cap="출근 전 → 출근 → 근무 중 → 쉬는 중 → 다시 시작 → 퇴근. 홈 맨 위 카드 하나로 하루가 흘러가요.">출근 → 퇴근</button>
         <button type="button" role="tab" aria-selected="false" data-src="img/l_work.webp" data-cap="관리 페이지. 휴가 쓰기, 근태 기록부, 이번 주 근무 시간을 봐요.">관리 페이지</button>
         <button type="button" role="tab" aria-selected="false" data-src="img/l_work_book.webp" data-cap="근태 기록부. 출근한 날마다 도장이 찍히고 야근 시간이 남아요.">근태 기록부</button>
       </div>
@@ -188,8 +234,8 @@
       </ul>
     </div>
     <figure class="feat-shot screen" data-screen="work">
-      <img src="img/l_work_card.webp" width="960" height="800" alt="홈 맨 위 셀프 출퇴근 카드, 근무 중" loading="lazy">
-      <figcaption>근무 중. 오늘 근무 시간과 퇴근까지 남은 시간이 떠요.</figcaption>
+      <img src="img/l_work_loop.webp" alt="셀프 출퇴근 카드가 출근 전에서 퇴근 뒤까지 바뀌는 반복 화면" loading="lazy">
+      <figcaption>출근 전 → 출근 → 근무 중 → 쉬는 중 → 다시 시작 → 퇴근. 홈 맨 위 카드 하나로 하루가 흘러가요.</figcaption>
     </figure>
   </div>
 </section>
@@ -227,20 +273,25 @@
   <div class="feat">
     <div class="feat-text">
       <h2 id="h-mini">작게 접어 두고 작업해요</h2>
-      <p class="lead-p">미니 화면은 지금 기록 · 뽀모도로 · 마감 진행을 손바닥만 한 창에 모아요. 할 일 · 메모 · 타이머 창을 그 아래에 착 붙여 둘 수 있어요.</p>
-      <div class="sw-btns" role="tablist" aria-label="미니 화면 고르기" data-switch="mini">
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_home.webp" data-cap="메인 창. 머리 줄의 미니 화면 단추를 누르면 작게 접혀요.">메인 창</button>
-        <button type="button" role="tab" aria-selected="true" data-src="img/l_mini_col.webp" data-cap="세로 미니 화면. 마감 · 뽀모도로 창이 아래에 붙어 있어요." data-mini="1">세로</button>
-        <button type="button" role="tab" aria-selected="false" data-src="img/l_mini_strip.webp" data-cap="가로 띠 미니 화면. 화면 위나 아래 가장자리에 길게 둬요." data-mini="1">가로 띠</button>
+      <p class="lead-p">미니 화면은 지금 기록 · 뽀모도로 · 마감 진행을 손바닥만 한 창에 모아요. 필요한 창을 그 아래에 착 붙여 나만의 묶음을 만들어요.</p>
+      <div class="sw-btns" role="group" aria-label="미니 화면에 붙일 창" id="miniParts">
+        <button type="button" aria-pressed="true" data-part="deadline">마감</button>
+        <button type="button" aria-pressed="true" data-part="pomo">뽀모도로</button>
+        <button type="button" aria-pressed="false" data-part="todo">할 일</button>
+        <button type="button" aria-pressed="false" data-part="memo">메모</button>
+        <button type="button" aria-pressed="false" data-part="player">플레이어</button>
       </div>
       <ul class="feat-list">
+        <li>오른쪽 미니 화면을 끌어 옮겨 보세요. 붙인 창은 같이 따라와요.</li>
         <li>‘항상 위에’를 켜면 그림 프로그램 위에서도 보여요.</li>
-        <li>붙여 둔 창은 미니 화면을 따라 함께 움직여요.</li>
       </ul>
     </div>
-    <figure class="feat-shot screen" data-screen="mini">
-      <div class="mini-stage"><img src="img/l_mini_col.webp" alt="세로 미니 화면과 아래에 붙은 마감 · 뽀모도로 창" loading="lazy"></div>
-      <figcaption>세로 미니 화면. 마감 · 뽀모도로 창이 아래에 붙어 있어요.</figcaption>
+    <figure class="feat-shot mini-desk-fig">
+      <div class="mini-desk" id="miniDesk">
+        <img class="desk-app" src="img/l_home.webp" width="960" height="800" alt="뒤에 열어 둔 넨트래커 메인 창" loading="lazy">
+        <div class="mini-stack" id="miniStack" tabindex="0" role="group" aria-label="미니 화면 묶음. 끌거나 화살표 키로 옮겨요"></div>
+      </div>
+      <figcaption>실제 앱 그림으로 만든 체험이에요. 끌어서 옮기고, 왼쪽 단추로 창을 붙였다 떼어 봐요.</figcaption>
     </figure>
   </div>
 </section>
@@ -292,7 +343,7 @@
 <section class="band band-night" id="multi" aria-labelledby="h-multi">
   <div class="neighbors">
     <figure class="shot tall">
-      <video src="img/visit.mp4" poster="img/shot_visit.webp" width="640" height="964" muted loop playsinline autoplay preload="metadata"
+      <video src="img/visit.mp4" poster="img/visit_poster.webp" width="640" height="964" muted loop playsinline autoplay preload="metadata"
         aria-label="이웃 토마토 님의 캠핑장에 놀러 간 화면을 실제로 찍은 영상. 모닥불 곁에서 말풍선으로 인사하고 장작을 보태요"></video>
       <figcaption>토마토 님의 캠핑장에 놀러 온 모습 (실제 두 앱으로 찍었어요)</figcaption>
     </figure>
@@ -314,6 +365,7 @@
 <!-- ═════ 밝음: 만든 사람 ═════ -->
 <section class="band band-light" id="about" aria-labelledby="h-about">
   <div class="letter">
+    <figure class="letter-pet"><img src="img/nyang_work.webp" alt="노트북으로 작업하는 헨냥이" loading="lazy"></figure>
     <h2 id="h-about">제 작업에 필요해서 만들었어요</h2>
     <p>작업 시간을 재고, 마감까지 하루 몫을 나누고, 집중과 휴식의 리듬을 잡는 데 쓰려고 만든 앱이에요. 지금도 매일 작업하면서 쓰고 있어요.</p>
     <p>지금 보이는 그림은 임시 그림이에요. 1.0에서 직접 그린 도트로 바뀌고, 그때까지는 BETA예요.</p>
@@ -328,11 +380,11 @@
     <h2 id="h-faq">자주 묻는 것</h2>
     <div class="faq-text">
       <p><b>정말 무료인가요?</b> 네, 무료예요. 앱 안 상점은 작업해서 모은 별조각으로만 써요.</p>
-      <p><b>어떤 컴퓨터에서 쓰나요?</b> 윈도우 10 · 11 (64비트) PC에서 써요. 맥과 휴대폰 판은 아직 없어요.</p>
+      <p><b>어떤 컴퓨터에서 쓰나요?</b> 윈도우 10 · 11 (64비트) PC에서 써요. 맥 판은 나중에 낼 예정이에요.</p>
       <p><b>기록은 어디에 저장되나요?</b> 로그인하지 않으면 모든 기록이 내 컴퓨터에만 있어요. 창 제목은 저장하지 않고, 사이트는 ‘유튜브’ · ‘기타 사이트’처럼 나눈 이름만 남아요.</p>
       <p><b>로그인은 꼭 해야 하나요?</b> 아니요. 이웃 · 놀러 가기 · 기기 연동을 쓸 때만 구글로 로그인해요. 설정 → 계정에서 계정과 서버 데이터를 언제든 지울 수 있어요.</p>
       <p><b>집중할 때 알림이 방해되지 않나요?</b> 뽀모도로 집중 중에는 알림 창을 띄우지 않아요. 친구도 조용히 응원만 해요.</p>
-      <p><b>어떤 작업에 맞나요?</b> 그림 · 웹툰 · 글 · 공부 · 개발처럼 컴퓨터로 하는 일이면 다 돼요. 클립 스튜디오 원고를 띄워 두는 레퍼런스 보드처럼 그리는 사람을 위한 기능도 있어요.</p>
+      <p><b>어떤 작업에 맞나요?</b> 그림 · 웹툰 · 글 · 공부 · 개발처럼 컴퓨터로 하는 일이면 다 돼요. 클립 스튜디오 원고를 띄워 두는 레퍼런스 보드처럼 그리는 사람을 위한 기능도 있어요. 작업 기록은 덤으로 두고, 그냥 다마고치 친구를 키우는 앱으로 써도 괜찮아요.</p>
       <p><b>설치할 때 경고가 떠요.</b> 개인이 만든 앱이라 Windows가 ‘알 수 없는 게시자’라고 알릴 수 있어요. [추가 정보] → [실행]을 누르면 설치돼요.</p>
       <p><b>업데이트는 어떻게 받나요?</b> 켤 때와 몇 시간마다 새 버전을 확인해요. 알림의 ‘업데이트’를 누르면 받아서 설치해요.</p>
       <p><b>BETA는 무슨 뜻인가요?</b> 아직 만들어 가는 중이라는 뜻이에요. 그림은 1.0에서 새로 그린 도트로 바뀌어요.</p>
@@ -356,6 +408,8 @@
     </div>
   </div>
 </section>
+<!-- 크게 보기 창 (실제 화면 · 영수증 그림을 누르면) -->
+<dialog class="zoom-big" id="zoomBig" aria-label="그림 크게 보기"><p>아무 곳이나 누르면 닫혀요</p></dialog>
 </main>
 
 <footer class="foot">
@@ -369,6 +423,8 @@
 
 <script src="data.js"></script>
 <script src="main.js"></script>
+<script src="report_marks.js"></script>
+<script src="widgets.js"></script>
 <script src="features.js"></script>
 </body>
 </html>
