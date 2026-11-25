@@ -65,7 +65,8 @@
     inc.style.opacity = "0";
     inc.src = `img/fire${s}.webp`;
     inc.hidden = false;
-    requestAnimationFrame(() => requestAnimationFrame(() => { inc.style.opacity = "1"; out.style.opacity = "0"; }));
+    void inc.offsetWidth;  // 꺼낸 그림이 투명한 채로 먼저 그려진 뒤 엇갈려 바뀌게
+    inc.style.opacity = "1"; out.style.opacity = "0";
     clearTimeout(out._t);
     out._t = setTimeout(() => { if (out.style.opacity === "0") out.hidden = true; }, reduce ? 0 : 800);
     [front, back] = [inc, out];
