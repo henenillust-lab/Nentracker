@@ -81,6 +81,26 @@ main, .foot { position: relative; z-index: 1; }
 .btn-dl:hover { background: linear-gradient(100deg, #ff9a40 0%, #ffb25c 55%, #ffc57a 100%); box-shadow: 0 14px 34px rgba(255, 146, 52, .36), inset 0 1px 0 rgba(255, 255, 255, .32); } /* taste-skill-ignore: 헤넨 님이 고른 모양 */
 .btn-dl:active { transform: scale(.97); }
 .btn-dl svg { flex: none; }
+
+/* 실제 화면 넘기기: 그림 누르면 다음 · 양옆 ‹ › · n / 전체 (2026-11-26 헤넨 님) */
+.scr-hold { position: relative; }
+.scr-hold img { cursor: pointer; }
+.scr-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: #151821; color: #fff; font: inherit; font-size: 24px; line-height: 1;
+  opacity: 0; transition: opacity .2s var(--ease), background-color .15s, transform .15s;
+}
+.scr-nav.prev { left: 12px; }
+.scr-nav.next { right: 12px; }
+.scr-nav:hover { background: #2b313c; }
+.scr-nav:active { transform: translateY(-50%) scale(.92); }
+.scr-hold:hover .scr-nav, .scr-nav:focus-visible { opacity: .92; }
+.scr-count {
+  position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 2;
+  background: #151821; color: #fff; font-size: 13px; font-weight: 700; padding: 3px 11px; border-radius: 999px; opacity: .85; pointer-events: none;
+}
+@media (hover: none) { .scr-nav { opacity: .85; } }
 .meta { margin-top: 18px; font-size: var(--t-s); color: var(--muted); }
 .block { padding: 0 var(--pad); margin-top: clamp(120px, 16svh, 200px); }
 .block h2 { font-size: var(--t-l); max-width: 12em; }

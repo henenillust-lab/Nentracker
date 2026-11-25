@@ -108,6 +108,36 @@
     });
   });
 
+  /* ═════ 2-1. 그림 누르면 다음 · 양옆 ‹ › · 'n / 전체' (실제 화면 칸 + 테마) ═════ */
+  function addNav(fig, getBtns) {
+    const img = fig && $("img", fig);
+    if (!img) return;
+    let holder = img.parentElement;
+    if (holder === fig) {  // 그림을 감싸는 자리를 만들어 단추를 그림 가운데 높이에 둠
+      holder = document.createElement("div");
+      holder.className = "scr-wrap";
+      fig.insertBefore(holder, img);
+      holder.appendChild(img);
+    }
+    holder.classList.add("scr-hold");
+    const mk = (cls, label, txt) => { const b = document.createElement("button"); b.type = "button"; b.className = "scr-nav " + cls; b.setAttribute("aria-label", label); b.textContent = txt; holder.appendChild(b); return b; };
+    const prev = mk("prev", "앞 화면", "‹"), next = mk("next", "다음 화면", "›");
+    const cnt = document.createElement("span");
+    cnt.className = "scr-count";
+    cnt.setAttribute("aria-hidden", "true");
+    holder.appendChild(cnt);
+    const cur = () => Math.max(0, getBtns().findIndex((b) => b.getAttribute("aria-selected") === "true"));
+    const upd = () => { cnt.textContent = `${cur() + 1} / ${getBtns().length}`; };
+    const go = (d) => { const bs = getBtns(); if (!bs.length) return; bs[(cur() + d + bs.length) % bs.length].click(); upd(); };
+    prev.addEventListener("click", (e) => { e.stopPropagation(); go(-1); });
+    next.addEventListener("click", (e) => { e.stopPropagation(); go(1); });
+    img.addEventListener("click", () => go(1));
+    img.title = "누르면 다음 화면";
+    getBtns().forEach((b) => b.addEventListener("click", () => setTimeout(upd, 0)));
+    upd();
+  }
+  $$("[data-switch]").forEach((box) => addNav($(`[data-screen="${box.dataset.switch}"]`), () => $$("button", box)));
+
   /* ═════ 3. 레퍼런스 보드 체험: 자유 · 웹툰 · 페이지 보기 ═════ */
   (function board() {
     const free = $("#bFree");
@@ -265,5 +295,6 @@
       box.appendChild(b);
       return b;
     });
+    addNav($('[data-screen="theme"]'), () => btns);
   })();
 })();
