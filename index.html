@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>넨트래커 · 작업한 만큼 모닥불이 자라는 시간 기록 앱</title>
-<meta name="description" content="켜 두기만 하면 작업 시간을 저절로 기록하는 윈도우용 무료 앱. 기록이 쌓일수록 캠핑장 모닥불이 자라고, 헨냥이가 곁에서 응원해요.">
+<meta name="description" content="켜 두기만 하면 작업 시간을 저절로 기록하는 윈도우용 무료 앱. 작업한 만큼 캠핑장 모닥불과 다마고치 친구가 자라요.">
 <meta property="og:title" content="넨트래커 · 작업한 만큼 모닥불이 자라요">
 <meta property="og:description" content="켜 두기만 하면 작업 시간을 저절로 기록하는 윈도우용 무료 앱이에요. BETA.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://henenillust-lab.github.io/Nentracker/img/og.png">
 <meta property="og:url" content="https://henenillust-lab.github.io/Nentracker/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#120F24">
+<meta name="theme-color" content="#0e1116">
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -23,9 +23,9 @@
 <canvas class="stars" id="stars" aria-hidden="true"></canvas>
 
 <main id="main">
+<!-- ═════ 밤하늘: 첫 칸 (오른쪽 캠핑장이 늘 보이고, 읽을수록 모닥불이 자람) ═════ -->
 <div class="split">
   <div class="read">
-
     <section class="sheet" id="top" aria-labelledby="h-top">
       <nav class="sheet-nav" aria-label="페이지 안">
         <a href="#features">기능</a>
@@ -34,7 +34,7 @@
       </nav>
       <div class="sheet-body">
         <h1 id="h-top">작업한 만큼 모닥불이 자라요</h1>
-        <p class="lead">넨트래커는 켜 두기만 하면 작업 시간을 저절로 기록하는 윈도우용 무료 앱이에요. 기록이 쌓일수록 캠핑장 모닥불이 커지고, 헨냥이가 곁에서 응원해요.</p>
+        <p class="lead">넨트래커는 켜 두기만 하면 작업 시간을 저절로 기록하는 윈도우용 무료 앱이에요. 기록이 쌓일수록 캠핑장 모닥불이 커지고, 다마고치 친구가 곁에서 응원해요.</p>
         <a class="btn" href="https://github.com/henenillust-lab/Nentracker/releases/latest/download/Nentracker_Setup.exe">무료로 받기</a>
         <p class="meta">윈도우 10 · 11 (64비트) · 설치 파일 172MB · BETA 0.9.45.1</p>
       </div>
@@ -44,22 +44,16 @@
       <h2 id="h-record">켜 두기만 하면 쌓여요</h2>
       <p>어떤 프로그램과 사이트에서 얼마나 작업했는지 카테고리별로 저절로 모여요. 창 제목은 저장하지 않고, 로그인하지 않으면 기록은 내 컴퓨터에만 있어요.</p>
       <figure class="shot">
-        <img src="img/l_home.webp" width="960" height="800" loading="lazy" alt="넨트래커 홈 화면. 총 사용 시간 2시간 40분, 기록 중 CLIPStudioPaint, 작업 2시간 · 브라우저 24분 · 업무 문서 11분 · 메신저 5분">
+        <img src="img/l_home.webp" width="960" height="800" loading="lazy" alt="넨트래커 홈 화면(밝음 테마). 총 사용 시간, 기록 중 CLIPStudioPaint, 작업 · 브라우저 · 업무 문서 · 메신저 카테고리">
         <figcaption>홈 화면. 오늘 쓴 시간이 카테고리별로 모여요.</figcaption>
       </figure>
     </section>
 
     <section class="block" id="campfire" aria-labelledby="h-campfire">
-      <h2 id="h-campfire">보상은 작업한 시간에서만</h2>
-      <p>모닥불, 별조각, 친구의 레벨은 모두 실제로 작업한 시간에서만 나와요. 앱이 또 하나의 딴짓거리가 되지 않게요. 오른쪽 모닥불도 읽어 내려온 만큼 자랐어요.</p>
-      <ul class="facts">
-        <li><b>8단계</b>작은 불씨부터 전설의 불꽃까지</li>
-        <li><b>48개</b>집중하면 이어지는 별자리</li>
-        <li><b>0원</b>앱 안에 결제가 없어요</li>
-      </ul>
+      <h2 id="h-campfire">작업할수록 친구가 자라요</h2>
+      <p>작업한 시간만큼 모닥불이 커지고, 다마고치 친구의 레벨이 오르고, 캠핑장을 꾸밀 별조각이 모여요. 오른쪽 모닥불도 여기까지 읽어 내려온 만큼 자랐어요.</p>
       <a class="btn camp-go" href="https://github.com/henenillust-lab/Nentracker/releases/latest/download/Nentracker_Setup.exe">나도 불 피우기 · 무료</a>
     </section>
-
   </div>
 
   <aside class="camp" aria-label="내 캠핑장. 내려 읽을수록 모닥불이 자라요">
@@ -76,333 +70,285 @@
     </div>
     <div class="camp-bar">
       <span id="fireName">모닥불 Lv.1 · 작은 불씨</span>
-      <span>작업한 시간으로만 자라요</span>
+      <span>작업한 시간만큼 자라요</span>
     </div>
   </aside>
 </div>
 
-<section class="index" id="features" aria-labelledby="h-features">
+<!-- ═════ 밝음: 할 수 있는 것 ═════ -->
+<section class="band band-light" id="features" aria-labelledby="h-features">
   <h2 id="h-features">넨트래커로 할 수 있는 것</h2>
-  <p class="index-lead">아래 칸마다 직접 눌러 볼 수 있는 체험이 들어 있어요.</p>
+  <p class="lead-p sub">칸마다 단추를 누르면 실제 앱 화면이 바뀌어요.</p>
   <ul class="idx">
-    <li><a href="#pomo"><b>별자리 뽀모도로</b><span>집중한 만큼 별을 이어요</span></a></li>
-    <li><a href="#deadline"><b>마감 보드</b><span>남은 날에 맞춰 하루 몫을 나눠요</span></a></li>
-    <li><a href="#report"><b>리포트</b><span>기록에서 찾은 관찰 다섯 장</span></a></li>
-    <li><a href="#work"><b>셀프 출퇴근</b><span>혼자 일해도 출근 도장을 찍어요</span></a></li>
-    <li><a href="#board"><b>레퍼런스 보드</b><span>참고 그림을 띄워 두고 그려요</span></a></li>
-    <li><a href="#mini"><b>미니 화면</b><span>작게 접어 화면 구석에 두어요</span></a></li>
-    <li><a href="#maker"><b>캐릭터 만들기</b><span>내가 그린 도트 친구가 말해요</span></a></li>
-    <li><a href="#theme"><b>테마</b><span>밝음 · 어두움과 여러 색 옷</span></a></li>
-    <li><a href="#multi"><b>이웃</b><span>캠핑장에 놀러 가서 같이 집중해요</span></a></li>
+    <li><a href="#pomo"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18l4-6 5 3 5-9"/><circle cx="5" cy="18" r="1.7"/><circle cx="9" cy="12" r="1.7"/><circle cx="14" cy="15" r="1.7"/><circle cx="19" cy="6" r="1.7"/></svg></span><b>별자리 뽀모도로</b><span>집중한 만큼 별을 이어요</span></a></li>
+    <li><a href="#deadline"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span><b>마감 보드</b><span>남은 날에 맞춰 하루 몫을 나눠요</span></a></li>
+    <li><a href="#report"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="5.5" y="11" width="3.4" height="6.5" rx="1"/><rect x="10.3" y="6.5" width="3.4" height="11" rx="1"/><rect x="15.1" y="13" width="3.4" height="4.5" rx="1"/></svg></span><b>리포트</b><span>기록에서 찾은 관찰 다섯 장</span></a></li>
+    <li><a href="#work"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="3"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M12 10.5v3l2 1.2"/></svg></span><b>셀프 출퇴근</b><span>혼자 일해도 출근 도장을 찍어요</span></a></li>
+    <li><a href="#board"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4" width="11" height="9" rx="2"/><rect x="9.5" y="10.5" width="11" height="9.5" rx="2"/><path d="M11.5 18l2.5-2.6 2 2 1.4-1.4 2.1 2"/></svg></span><b>레퍼런스 보드</b><span>참고 그림을 띄워 두고 그려요</span></a></li>
+    <li><a href="#mini"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3"/><rect x="12" y="12" width="6.5" height="5" rx="1.5"/></svg></span><b>미니 화면</b><span>작게 접어 화면 구석에 두어요</span></a></li>
+    <li><a href="#maker"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10l1.5-5 3.5 3h4l3.5-3 1.5 5v4.5a5.5 5.5 0 0 1-5.5 5.5h-3A5.5 5.5 0 0 1 5 14.5z"/><path d="M9.5 13.2v.1M14.5 13.2v.1M11 16.2h2"/></svg></span><b>캐릭터 만들기</b><span>내가 그린 도트 친구가 말해요</span></a></li>
+    <li><a href="#theme"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 1 0 0 17c1.2 0 1.8-.9 1.4-1.9-.5-1.2.3-2.4 1.6-2.4H17a3.5 3.5 0 0 0 3.5-3.5c0-5.1-3.8-9.2-8.5-9.2z"/><circle cx="7.8" cy="11" r="1.1"/><circle cx="10.5" cy="7.4" r="1.1"/><circle cx="15" cy="7.9" r="1.1"/></svg></span><b>테마</b><span>밝음 · 어두움과 여러 색 옷</span></a></li>
+    <li><a href="#multi"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c2 2.2 3.3 4 3.3 6a3.3 3.3 0 0 1-6.6 0c0-1.7 1.3-3.8 3.3-6z"/><path d="M4.5 20l15-4.2M4.5 15.8l15 4.2"/></svg></span><b>이웃</b><span>캠핑장에 놀러 가서 같이 집중해요</span></a></li>
   </ul>
 </section>
 
-<section class="sky" id="pomo" aria-labelledby="h-pomo">
-  <div class="sky-text">
-    <h2 id="h-pomo">집중한 시간이 별자리가 돼요</h2>
-    <p>뽀모도로를 시작하면 시간이 흐르는 만큼 별을 이어요. 다 이으면 별자리 하나가 완성돼요. 집중 시간에 맞춰 48개 중 하나가 나와요.</p>
-    <div class="sky-pick" role="radiogroup" aria-label="집중 시간 고르기">
-      <button type="button" role="radio" aria-checked="false" data-g="작은" data-min="20"><b>20분</b><span>작은 별자리 · 별 4~5개</span></button>
-      <button type="button" role="radio" aria-checked="true" data-g="보통" data-min="25"><b>25분</b><span>보통 별자리 · 별 6~7개</span></button>
-      <button type="button" role="radio" aria-checked="false" data-g="큰" data-min="45"><b>45분</b><span>큰 별자리 · 별 8~10개</span></button>
-      <button type="button" role="radio" aria-checked="false" data-g="아주 큰" data-min="50"><b>50분</b><span>아주 큰 별자리 · 별 11~13개</span></button>
-    </div>
-  </div>
-  <div class="sky-stage">
-    <div class="pomo" data-ui>
-      <div class="pomo-head"><span>뽀모도로</span><span id="pomoCount">집중 0번 했어요</span></div>
-      <canvas id="skyCanvas" width="560" height="400" role="img" aria-label="별자리 판. 시작을 누르면 별을 이어요"></canvas>
-      <p class="pomo-time" id="pomoTime">25:00</p>
-      <p class="pomo-state" id="pomoState">시작을 누르면 별을 이어요</p>
-      <div class="pomo-btns">
-        <button type="button" class="pomo-go" id="pomoGo">시작</button>
-        <button type="button" class="pomo-sub" id="pomoReset">처음부터</button>
+<!-- ═════ 밤하늘: 별자리 뽀모 ═════ -->
+<section class="band band-night" id="pomo" aria-labelledby="h-pomo">
+  <div class="feat">
+    <div class="feat-text">
+      <h2 id="h-pomo">집중한 시간이 별자리가 돼요</h2>
+      <p class="lead-p">뽀모도로를 켜면 시간이 흐르는 만큼 별을 이어요. 다 이으면 별자리 하나가 완성돼요. 집중 시간에 맞춰 48개 중 하나가 나와요.</p>
+      <div class="sw-btns" role="tablist" aria-label="집중 시간 고르기" data-switch="pomo">
+        <button type="button" role="tab" aria-selected="false" data-src="img/pomo_20.webp" data-cap="20분 · 작은 별자리 · 이번엔 낚싯대자리">20분</button>
+        <button type="button" role="tab" aria-selected="true" data-src="img/pomo_25.webp" data-cap="25분 · 보통 별자리 · 이번엔 컵케이크자리">25분</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/pomo_45.webp" data-cap="45분 · 큰 별자리 · 이번엔 왕관자리">45분</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/pomo_50.webp" data-cap="50분 · 아주 큰 별자리 · 이번엔 열기구자리">50분</button>
       </div>
-      <noscript><p class="pomo-state">이 체험은 자바스크립트가 켜져 있어야 움직여요.</p></noscript>
+      <ul class="feat-list">
+        <li>쉬는 시간엔 방금 완성한 별자리 위로 초승달이 건너가요.</li>
+        <li>따로 띄우면 별자리 판만 작게 남겨 둘 수 있어요.</li>
+      </ul>
     </div>
-    <p class="sky-cap" id="skyCap">앱에서는 25분 동안 천천히 이어져요. 여기서는 12초로 빨리 감았어요.</p>
-  </div>
-</section>
-
-<section class="feat" id="deadline" aria-labelledby="h-deadline">
-  <div class="feat-text">
-    <h2 id="h-deadline">마감까지 하루 몫을 나눠요</h2>
-    <p>마감일과 남은 분량을 넣으면 쉬는 날을 빼고 하루 몫을 나눠요. 하루 밀려도 혼내지 않고, 남은 날에 조용히 다시 나눠요.</p>
-    <div class="ctl" aria-label="마감 계산 해 보기">
-      <div class="step">
-        <span class="step-l" id="dlAmtL">남은 분량</span>
-        <button type="button" class="pm" data-k="amt" data-d="-1" aria-label="분량 하나 줄이기">−</button>
-        <output id="dlAmt" aria-labelledby="dlAmtL">12</output><span class="unit">컷</span>
-        <button type="button" class="pm" data-k="amt" data-d="1" aria-label="분량 하나 늘리기">＋</button>
-      </div>
-      <div class="step">
-        <span class="step-l" id="dlDaysL">남은 날</span>
-        <button type="button" class="pm" data-k="days" data-d="-1" aria-label="남은 날 하루 줄이기">−</button>
-        <output id="dlDays" aria-labelledby="dlDaysL">9</output><span class="unit">일</span>
-        <button type="button" class="pm" data-k="days" data-d="1" aria-label="남은 날 하루 늘리기">＋</button>
-      </div>
-      <div class="chips" role="group" aria-label="쉬는 요일">
-        <span class="step-l">쉬는 요일</span>
-        <button type="button" class="chip" data-wd="1" aria-pressed="false">월</button><button type="button" class="chip" data-wd="2" aria-pressed="false">화</button><button type="button" class="chip" data-wd="3" aria-pressed="false">수</button><button type="button" class="chip" data-wd="4" aria-pressed="false">목</button><button type="button" class="chip" data-wd="5" aria-pressed="false">금</button><button type="button" class="chip" data-wd="6" aria-pressed="false">토</button><button type="button" class="chip" data-wd="0" aria-pressed="true">일</button>
-      </div>
-      <button type="button" class="ghost" id="dlMiss">오늘 못 했어요</button>
-    </div>
-    <ul class="feat-list">
-      <li>콘티 · 선화 · 채색 · 마무리처럼 공정을 나눠 어디까지 왔는지 봐요.</li>
-      <li>홈 맨 위 띠에 오늘 할 몫이 늘 떠 있어요.</li>
-      <li>끝내면 결산 창에서 마감에 든 시간을 돌아봐요.</li>
-    </ul>
-  </div>
-  <div class="feat-stage">
-    <div class="view-seg" role="tablist" aria-label="보기 고르기">
-      <button type="button" role="tab" aria-selected="true" data-view="try">해 보기</button>
-      <button type="button" role="tab" aria-selected="false" data-view="real">실제 앱 화면</button>
-    </div>
-    <div class="ui ui-dl" data-ui data-pane="try">
-      <div class="ui-row"><span class="dday" id="dlD">D-9</span><div><b>웹툰 12화 마감</b><small id="dlSub">남은 12컷 · 쉬는 날 빼고 8일</small></div><span class="ui-chip ok" id="dlState">계획대로예요</span></div>
-      <div class="ui-big"><small>오늘 몫</small><b id="dlToday">2컷</b></div>
-      <div class="ui-days" id="dlCal" aria-label="날마다 나눈 분량"></div>
-      <p class="ui-note" id="dlNote">남은 날에 고르게 나눴어요.</p>
-    </div>
-    <figure class="real" data-pane="real" hidden>
-      <img src="img/l_sched.webp" width="960" height="800" loading="lazy" alt="넨트래커 일정 탭의 마감 카드. 웹툰 12화 마감 D-9, 공정 콘티 · 선화 · 채색 · 마무리, 오늘 채색 4컷">
+    <figure class="feat-shot screen" data-screen="pomo">
+      <img src="img/pomo_25.webp" alt="실제 앱의 뽀모도로 별자리 판. 집중하는 동안 별이 하나씩 이어져요" loading="lazy">
+      <figcaption>25분 · 보통 별자리 · 이번엔 컵케이크자리 · 실제 화면을 빨리 감았어요</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="feat feat-flip" id="report" aria-labelledby="h-report">
-  <div class="feat-text">
-    <h2 id="h-report">리포트가 먼저 알아채요</h2>
-    <p>한 달 기록을 관찰 일지처럼 다섯 장으로 보여 줘요. 잘했다 못했다 판정하지 않고, 다음에 해 볼 한 걸음만 권해요.</p>
-    <div class="rp-pick" role="tablist" aria-label="관찰 고르기">
-      <button type="button" role="tab" aria-selected="true" data-i="0">얼마나</button>
-      <button type="button" role="tab" aria-selected="false" data-i="1">어떻게</button>
-      <button type="button" role="tab" aria-selected="false" data-i="2">언제, 어떤 날</button>
-      <button type="button" role="tab" aria-selected="false" data-i="3">무엇이 끊었나</button>
-      <button type="button" role="tab" aria-selected="false" data-i="4">다음 한 걸음</button>
+<!-- ═════ 밝음: 마감 ═════ -->
+<section class="band band-light" id="deadline" aria-labelledby="h-deadline">
+  <div class="feat">
+    <div class="feat-text">
+      <h2 id="h-deadline">마감까지 하루 몫을 나눠요</h2>
+      <p class="lead-p">마감일과 남은 분량을 넣으면 쉬는 날을 빼고 하루 몫을 나눠요. 하루 밀려도 남은 날에 조용히 다시 나눠요.</p>
+      <div class="sw-btns" role="tablist" aria-label="마감 화면 고르기" data-switch="deadline">
+        <button type="button" role="tab" aria-selected="true" data-src="img/l_sched.webp" data-cap="마감 카드. 웹툰 12화 D-9, 오늘 몫은 채색 4컷이고 ‘계획대로예요’가 떠요.">마감 카드</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_steps.webp" data-cap="콘티 · 선화 · 채색 · 마무리처럼 공정을 나눠 어디까지 왔는지 봐요.">공정 펼치기</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_plus.webp" data-cap="한 컷 끝낼 때마다 ＋를 눌러요. 오늘 몫이 차오르고 남은 날 계산이 바로 바뀌어요.">오늘 몫 ＋</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_dl_done.webp" data-cap="다 끝내면 결산 창에서 마감에 든 시간을 돌아봐요.">다 끝내면</button>
+      </div>
+      <ul class="feat-list">
+        <li>홈 맨 위 띠에 오늘 할 몫이 늘 떠 있어요.</li>
+        <li>셀프 출퇴근의 휴가 날은 마감 계산에서 빠져요.</li>
+      </ul>
     </div>
-  </div>
-  <div class="feat-stage">
-    <div class="view-seg" role="tablist" aria-label="보기 고르기">
-      <button type="button" role="tab" aria-selected="true" data-view="try">해 보기</button>
-      <button type="button" role="tab" aria-selected="false" data-view="real">실제 앱 화면</button>
-    </div>
-    <div class="ui ui-rp" data-ui data-pane="try" role="tabpanel" aria-live="polite">
-      <div class="rp-head"><span class="rp-no" id="rpNo">1</span><span id="rpQ">얼마나</span></div>
-      <p class="rp-title" id="rpT"></p>
-      <div class="rp-fig" id="rpFig"></div>
-      <p class="rp-desc" id="rpD"></p>
-    </div>
-    <figure class="real" data-pane="real" hidden>
-      <img src="img/l_report_obs.webp" loading="lazy" alt="넨트래커 리포트 화면. 숫자 칸 셋과 다섯 가지 관찰 카드">
+    <figure class="feat-shot screen" data-screen="deadline">
+      <img src="img/l_sched.webp" width="960" height="800" alt="넨트래커 일정 탭의 마감 카드" loading="lazy">
+      <figcaption>마감 카드. 웹툰 12화 D-9, 오늘 몫은 채색 4컷이고 ‘계획대로예요’가 떠요.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="feat feat-wide" id="work" aria-labelledby="h-work">
-  <div class="feat-text wide">
-    <h2 id="h-work">혼자 일해도 출근 · 퇴근</h2>
-    <p>프리랜서와 1인 작업자를 위한 셀프 출퇴근이에요. 정한 시각에 출근을 묻고, 쉬는 시간 · 야근 · 휴가까지 근태 기록부에 도장으로 남겨요. 퇴근 뒤 놀이는 딴짓으로 세지 않아요.</p>
-  </div>
-  <div class="feat-seg">
-    <div class="view-seg" role="tablist" aria-label="보기 고르기">
-      <button type="button" role="tab" aria-selected="true" data-view="try">해 보기</button>
-      <button type="button" role="tab" aria-selected="false" data-view="real">실제 앱 화면</button>
+<!-- ═════ 짙은 남회색: 리포트 ═════ -->
+<section class="band band-slate" id="report" aria-labelledby="h-report">
+  <div class="feat flip">
+    <div class="feat-text">
+      <h2 id="h-report">리포트가 먼저 알아채요</h2>
+      <p class="lead-p">한 달 기록을 관찰 일지처럼 다섯 장으로 보여 줘요. 잘했다 못했다 판정하지 않고, 다음에 해 볼 한 걸음만 권해요.</p>
+      <div class="sw-btns" role="tablist" aria-label="관찰 고르기" data-switch="report">
+        <button type="button" role="tab" aria-selected="true" data-src="img/l_rp0.webp" data-cap="한 달 숫자 셋: 집중한 시간 · 작업 중 다른 데로 간 시간 · 쉰 시간.">한눈에</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp1.webp" data-cap="얼마나: 주마다 도장을 채워요. 가득 차면 하루 목표를 채운 주예요.">얼마나</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp2.webp" data-cap="어떻게: 한 번 앉으면 얼마나 이어 가는지, 평소와 견줘요.">어떻게</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp3.webp" data-cap="언제, 어떤 날: 가장 깊게 몰입하는 때와 유난히 달랐던 요일.">언제, 어떤 날</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp4.webp" data-cap="무엇이 끊었나: 작업하다 다른 데로 간 때만 세요.">무엇이 끊었나</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_rp5.webp" data-cap="다음 한 걸음: 약한 곳이 보이면 하나만 권하고, 마감 속도도 같이 짚어 줘요.">다음 한 걸음</button>
+      </div>
     </div>
-  </div>
-  <div class="work-stage" data-pane="try">
-    <div class="ui ui-work" data-ui>
-      <div class="ui-row"><span class="ui-chip" id="wkChip">출근 전</span><span class="wk-clock" id="wkClock">09:52</span></div>
-      <div class="ui-big"><small>오늘 근무</small><b id="wkTime">0시간 0분</b></div>
-      <div class="wk-bar" aria-hidden="true"><i id="wkBar"></i></div>
-      <div class="wk-btns" id="wkBtns"></div>
-      <p class="wk-say" id="wkSay" aria-live="polite">출근 도장 찍으러 가자냥</p>
-    </div>
-    <div class="ui ui-cal" data-ui aria-label="근태 기록부 11월">
-      <div class="ui-row"><b>근태 기록부</b><small>11월</small></div>
-      <div class="cal-grid" id="wkCal"></div>
-      <p class="ui-note">진한 도장 = 출근 · 퇴근 모두 · 옅은 도장 = 쉬는 날</p>
-    </div>
-    <ul class="feat-list work-list">
-      <li><b>출근 의식</b> 오늘 할 일 셋 · 어제 적은 첫 할 일 · 가까운 마감을 보여 주고 시작해요.</li>
-      <li><b>쉬자 제안</b> 휴일 근무가 쌓이면 쉬는 날을 골라 보자고 먼저 말해요.</li>
-      <li><b>휴가</b> 휴가 날은 마감 계산에서도 빠지고, 남은 날에 다시 나눠요.</li>
-      <li><b>근무 광고판</b> 캐릭터 머리 위 작은 판과 이웃 목록에 ‘근무 중’이 떠요.</li>
-    </ul>
-  </div>
-  <div class="real-duo" data-pane="real" hidden>
-    <figure class="real"><img src="img/l_work.webp" width="960" height="800" loading="lazy" alt="셀프 출퇴근 페이지. 근무 중 4시간 9분, 휴가 쓰기, 근태 기록부, 이번 주 근무 시간 막대"></figure>
-    <figure class="real"><img src="img/l_work_book.webp" width="960" height="800" loading="lazy" alt="근태 기록부 11월. 출근한 날마다 도장과 야근 시간이 적혀 있어요"></figure>
+    <figure class="feat-shot screen" data-screen="report">
+      <img src="img/l_rp0.webp" width="960" height="260" alt="리포트 화면의 숫자 칸 셋" loading="lazy">
+      <figcaption>한 달 숫자 셋: 집중한 시간 · 작업 중 다른 데로 간 시간 · 쉰 시간.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="feat feat-board" id="board" aria-labelledby="h-board">
-  <div class="feat-text wide">
-    <h2 id="h-board">참고 그림을 띄워 두고 그려요</h2>
-    <p>레퍼런스 보드에 그림을 끌어 놓고, 돌리고 뒤집고 크게 봐요. 작업 창 위에 반투명하게 겹쳐 두거나 단축키 하나로 불러올 수 있어요.</p>
-  </div>
-  <div class="feat-seg">
-    <div class="view-seg" role="tablist" aria-label="보기 고르기">
-      <button type="button" role="tab" aria-selected="true" data-view="try">해 보기</button>
-      <button type="button" role="tab" aria-selected="false" data-view="real">실제 앱 화면</button>
+<!-- ═════ 밝음: 셀프 출퇴근 ═════ -->
+<section class="band band-light" id="work" aria-labelledby="h-work">
+  <div class="feat">
+    <div class="feat-text">
+      <h2 id="h-work">혼자 일해도 출근 · 퇴근</h2>
+      <p class="lead-p">프리랜서와 1인 작업자를 위한 셀프 출퇴근이에요. 정한 시각에 출근을 묻고, 쉬는 시간 · 야근 · 휴가까지 근태 기록부에 도장으로 남겨요.</p>
+      <div class="sw-btns" role="tablist" aria-label="출퇴근 화면 고르기" data-switch="work">
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_work_before.webp" data-cap="출근 전. 홈 맨 위 카드에서 출근을 눌러요.">출근 전</button>
+        <button type="button" role="tab" aria-selected="true" data-src="img/l_work_card.webp" data-cap="근무 중. 오늘 근무 시간과 퇴근까지 남은 시간이 떠요.">근무 중</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_work_rest.webp" data-cap="쉬는 중. 쉬는 시간은 근무 시간에서 빠져요.">쉬는 중</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_work_off.webp" data-cap="퇴근 뒤. 퇴근 뒤 놀이는 딴짓으로 세지 않아요.">퇴근 뒤</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_work.webp" data-cap="관리 페이지. 휴가 쓰기, 근태 기록부, 이번 주 근무 시간을 봐요.">관리 페이지</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_work_book.webp" data-cap="근태 기록부. 출근한 날마다 도장이 찍히고 야근 시간이 남아요.">근태 기록부</button>
+      </div>
+      <ul class="feat-list">
+        <li><b>출근 의식</b>오늘 할 일 셋 · 어제 적은 첫 할 일 · 가까운 마감을 보여 주고 시작해요.</li>
+        <li><b>쉬자 제안</b>휴일 근무가 쌓이면 쉬는 날을 골라 보자고 먼저 말해요.</li>
+        <li><b>근무 광고판</b>캐릭터 머리 위 작은 판과 이웃 목록에 ‘근무 중’이 떠요.</li>
+      </ul>
     </div>
+    <figure class="feat-shot screen" data-screen="work">
+      <img src="img/l_work_card.webp" width="960" height="800" alt="홈 맨 위 셀프 출퇴근 카드, 근무 중" loading="lazy">
+      <figcaption>근무 중. 오늘 근무 시간과 퇴근까지 남은 시간이 떠요.</figcaption>
+    </figure>
   </div>
-  <div class="board-wrap" data-pane="try">
-    <div class="ui ui-board" data-ui id="boardCanvas" aria-label="레퍼런스 보드 해 보기. 그림을 끌어 옮기고 두 번 눌러 크게 봐요"></div>
-    <div class="board-bar">
-      <span id="boardHint">그림을 끌어 보세요 · 두 번 누르면 크게 · 화살표 키로도 옮겨요</span>
+</section>
+
+<!-- ═════ 짙은 남회색: 레퍼런스 보드 (체험) ═════ -->
+<section class="band band-slate" id="board" aria-labelledby="h-board">
+  <h2 id="h-board">참고 그림을 띄워 두고 그려요</h2>
+  <p class="lead-p sub">레퍼런스 보드에 그림을 끌어 놓고 자유롭게 배치하거나, 웹툰처럼 세로로 이어 보고, 한 쪽씩 넘겨 봐요.</p>
+  <div class="board-wrap">
+    <div class="board-top">
+      <div class="sw-btns" role="tablist" aria-label="보기 고르기" id="boardModes">
+        <button type="button" role="tab" aria-selected="true" data-mode="free">자유 보기</button>
+        <button type="button" role="tab" aria-selected="false" data-mode="toon">웹툰 보기</button>
+        <button type="button" role="tab" aria-selected="false" data-mode="page">페이지 보기</button>
+      </div>
       <button type="button" class="ghost" id="boardTidy">가지런히</button>
     </div>
+    <div class="ui-board" data-ui id="boardCanvas" aria-label="레퍼런스 보드 체험">
+      <div class="b-free" id="bFree"></div>
+      <div class="b-toon" id="bToon" hidden><div class="b-strip" id="bStrip" aria-label="쪽 줄"></div><div class="b-scroll" id="bScroll" tabindex="0" aria-label="웹툰 보기. 위아래로 스크롤해요"></div></div>
+      <div class="b-page" id="bPage" hidden><button type="button" class="nav" id="bPrev" aria-label="앞 쪽">‹</button><figure><img id="bPageImg" src="img/pg_1.webp" alt="1쪽"></figure><button type="button" class="nav" id="bNext" aria-label="다음 쪽">›</button><span class="b-count" id="bCount" aria-live="polite">1 / 6쪽</span></div>
+    </div>
+    <p class="board-hint" id="boardHint">그림을 끌어 보세요 · 두 번 누르면 크게 · 화살표 키로도 옮겨요</p>
   </div>
-  <figure class="real board-real" data-pane="real" hidden><img src="img/l_board.webp" width="1280" height="800" loading="lazy" alt="레퍼런스 보드 창. 종이 바탕 위에 캐릭터 도트 · 캠핑장 배경 · 캠핑카 그림 여덟 장이 놓여 있어요"></figure>
-  <ul class="feat-list cols">
-    <li><b>돌리고 뒤집기</b> 띄운 그림을 자유롭게 돌리고, 크기를 바꾸고, 위아래로 뒤집어요.</li>
-    <li><b>투명하게 겹치기</b> 배경을 투명하게 하면 핀 꽂은 그림만 작업 창 위에 떠요.</li>
-    <li><b>원고 보드</b> 클립 스튜디오 원고를 열어 두면 저장할 때마다 보드에 바로 반영돼요.</li>
-    <li><b>탭 · 폴더</b> 보드를 탭으로 오가고, 폴더 · 보관함으로 정리해요.</li>
+  <ul class="feat-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 28px">
+    <li><b>돌리고 뒤집기</b>띄운 그림을 자유롭게 돌리고, 크기를 바꾸고, 위아래로 뒤집어요.</li>
+    <li><b>웹툰 · 페이지 보기</b>왼쪽 쪽 줄로 원하는 쪽에 바로 가고, Z나 Ctrl+휠로 확대해요.</li>
+    <li><b>원고 보드</b>클립 스튜디오 원고를 열어 두면 저장할 때마다 보드에 바로 반영돼요.</li>
+    <li><b>투명하게 겹치기</b>배경을 투명하게 하면 핀 꽂은 그림만 작업 창 위에 떠요.</li>
   </ul>
 </section>
 
-<section class="feat feat-mini" id="mini" aria-labelledby="h-mini">
-  <div class="feat-text">
-    <h2 id="h-mini">작게 접어 두고 작업해요</h2>
-    <p>미니 화면은 지금 기록 · 뽀모도로 · 마감 진행을 손바닥만 한 창에 모아요. 할 일 · 메모 · 타이머 창을 그 아래에 착 붙여 둘 수 있어요.</p>
-    <button type="button" class="btn btn-line" id="miniGo" aria-pressed="false">작게 접기</button>
-    <ul class="feat-list">
-      <li>‘항상 위에’를 켜면 그림 프로그램 위에서도 보여요.</li>
-      <li>붙여 둔 창은 미니 화면을 따라 함께 움직여요.</li>
-    </ul>
-  </div>
-  <div class="mini-stage" id="miniStage" aria-label="미니 화면 접기 해 보기">
-    <img class="mini-main" src="img/l_home.webp" width="960" height="800" alt="넨트래커 메인 창 (밝음 테마)">
-    <img class="mini-small" src="img/l_mini.webp" alt="미니 화면과 아래에 붙은 마감 · 뽀모도로 창" hidden>
+<!-- ═════ 밝음: 미니 화면 ═════ -->
+<section class="band band-light" id="mini" aria-labelledby="h-mini">
+  <div class="feat">
+    <div class="feat-text">
+      <h2 id="h-mini">작게 접어 두고 작업해요</h2>
+      <p class="lead-p">미니 화면은 지금 기록 · 뽀모도로 · 마감 진행을 손바닥만 한 창에 모아요. 할 일 · 메모 · 타이머 창을 그 아래에 착 붙여 둘 수 있어요.</p>
+      <div class="sw-btns" role="tablist" aria-label="미니 화면 고르기" data-switch="mini">
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_home.webp" data-cap="메인 창. 머리 줄의 미니 화면 단추를 누르면 작게 접혀요.">메인 창</button>
+        <button type="button" role="tab" aria-selected="true" data-src="img/l_mini_col.webp" data-cap="세로 미니 화면. 마감 · 뽀모도로 창이 아래에 붙어 있어요." data-mini="1">세로</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_mini_strip.webp" data-cap="가로 띠 미니 화면. 화면 위나 아래 가장자리에 길게 둬요." data-mini="1">가로 띠</button>
+      </div>
+      <ul class="feat-list">
+        <li>‘항상 위에’를 켜면 그림 프로그램 위에서도 보여요.</li>
+        <li>붙여 둔 창은 미니 화면을 따라 함께 움직여요.</li>
+      </ul>
+    </div>
+    <figure class="feat-shot screen" data-screen="mini">
+      <div class="mini-stage"><img src="img/l_mini_col.webp" alt="세로 미니 화면과 아래에 붙은 마감 · 뽀모도로 창" loading="lazy"></div>
+      <figcaption>세로 미니 화면. 마감 · 뽀모도로 창이 아래에 붙어 있어요.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="friend" id="friend" aria-labelledby="h-friend">
-  <h2 id="h-friend" class="giant">늘 곁에<br>있는 친구</h2>
-  <div class="prints">
-    <figure class="print p1">
-      <img src="img/desk_friend.png" width="166" height="231" loading="lazy" alt="바탕화면 창 위에 앉은 헨냥이가 '냥냥, 발이 허공이다냥' 하고 말해요">
-      <figcaption>바탕화면</figcaption>
-    </figure>
-    <figure class="print p2">
-      <img src="img/l_maker.webp" loading="lazy" alt="새 친구 만들기 창. 그림 한 장 넣기, 조각 PNG 여러 장, 빈 판에 직접 그리기 중에서 골라요">
-      <figcaption>새 친구 만들기</figcaption>
-    </figure>
-    <figure class="print p3">
-      <img src="img/hennyang_happy.png" width="47" height="59" loading="lazy" alt="웃는 헨냥이">
-      <figcaption>헨냥이</figcaption>
-    </figure>
+<!-- ═════ 밤하늘: 기본 친구 9 ═════ -->
+<section class="band band-night" id="friend" aria-labelledby="h-friend">
+  <div class="friends-head">
+    <h2 id="h-friend">늘 곁에 있는 친구</h2>
+    <p>기본 친구 아홉이 바탕화면과 캠핑장에서 함께해요. 성격도 말투도 저마다 달라요. 눌러서 말을 걸어 보세요.</p>
   </div>
-  <p class="friend-note">바탕화면 창 위에 매달려 말을 걸고, 집중할 땐 조용히 응원해요. 내가 그린 도트 캐릭터도 친구로 데려올 수 있어요.</p>
+  <ul class="friends" id="friends"></ul>
+  <p class="friends-note">작업하는 동안 바탕화면 창 위에 매달려 말을 걸고, 집중할 땐 조용히 응원해요. 작업하고 할 일을 끝낼수록 친밀도가 오르고 레벨이 올라요.</p>
 </section>
 
-<section class="feat feat-maker" id="maker" aria-labelledby="h-maker">
-  <div class="feat-text wide">
-    <h2 id="h-maker">내 친구를 도트로 그려요</h2>
-    <p>그림 한 장을 넣으면 도트로 바꿔 주고, 빈 판에 직접 그릴 수도 있어요. 숨쉬기 · 걷기 같은 모션과 말투를 정하면 바탕화면과 캠핑장에서 친구가 돼요.</p>
-  </div>
-  <div class="feat-seg">
-    <div class="view-seg" role="tablist" aria-label="보기 고르기">
-      <button type="button" role="tab" aria-selected="true" data-view="try">해 보기</button>
-      <button type="button" role="tab" aria-selected="false" data-view="real">실제 앱 화면</button>
-    </div>
-  </div>
-  <div class="maker-stage" data-pane="try">
-    <div class="ui ui-px" data-ui>
-      <div class="ui-row"><b>그리기</b><small>16 × 16</small></div>
-      <div class="px-grid" id="pxGrid" role="grid" aria-label="도트 판. 눌러서 칠해요"></div>
-      <div class="px-tools">
-        <div class="px-pal" id="pxPal" role="radiogroup" aria-label="색 고르기"></div>
-        <button type="button" class="ui-btn" id="pxErase" aria-pressed="false">지우개</button>
-        <button type="button" class="ui-btn" id="pxSample">견본</button>
-        <button type="button" class="ui-btn" id="pxClear">비우기</button>
+<!-- ═════ 밝음: 캐릭터 만들기 ═════ -->
+<section class="band band-light" id="maker" aria-labelledby="h-maker">
+  <div class="feat flip">
+    <div class="feat-text">
+      <h2 id="h-maker">내 친구를 도트로 그려요</h2>
+      <p class="lead-p">그림 한 장을 넣으면 도트로 바꿔 주고, 빈 판에 직접 그릴 수도 있어요. 이름과 말투를 정하면 바탕화면과 캠핑장에서 내 친구가 돼요.</p>
+      <div class="sw-btns" role="tablist" aria-label="새 친구 만들기 단계 고르기" data-switch="maker">
+        <button type="button" role="tab" aria-selected="true" data-src="img/l_maker_s1.webp" data-cap="시작: 그림 한 장 · 조각 PNG 여러 장 · 빈 판에 직접 그리기 중에서 골라요.">시작</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_maker_s2.webp" data-cap="그림: 넣은 그림을 도트로 바꾸고 눈 자리만 찍어요.">그림</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_maker_s3.webp" data-cap="이름: 친구 이름을 정해요.">이름</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_maker_s4.webp" data-cap="말투: 기본 친구들처럼 말투를 골라요.">말투</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_maker_s5.webp" data-cap="완성: 다 만든 뒤에도 꾸미기에서 고칠 수 있어요.">완성</button>
+        <button type="button" role="tab" aria-selected="false" data-src="img/l_maker_draw.webp" data-cap="그리기 창: 레이어 · 색상환 · 모션까지 직접 그려요.">그리기 창</button>
       </div>
     </div>
-    <div class="ui ui-pv" data-ui>
-      <div class="ui-row"><b>미리 보기</b><small>숨쉬기</small></div>
-      <div class="pv-stage">
-        <p class="pv-bubble" id="pvBubble" aria-live="polite">눌러서 말 걸기</p>
-        <button type="button" class="pv-char" id="pvChar" aria-label="내 캐릭터에게 말 걸기"><canvas id="pvCanvas" width="16" height="16"></canvas></button>
-      </div>
-      <div class="pv-style">
-        <span class="step-l">말투</span>
-        <div class="chips" id="pvStyles" role="radiogroup" aria-label="말투 고르기"></div>
-      </div>
-    </div>
+    <figure class="feat-shot screen" data-screen="maker">
+      <img src="img/l_maker_s1.webp" alt="새 친구 만들기 창, 시작 단계" loading="lazy">
+      <figcaption>시작: 그림 한 장 · 조각 PNG 여러 장 · 빈 판에 직접 그리기 중에서 골라요.</figcaption>
+    </figure>
   </div>
-  <figure class="real maker-real" data-pane="real" hidden><img src="img/l_maker_draw.webp" width="1530" height="928" loading="lazy" alt="캐릭터 그리기 창. 색상환 · 도구 · 레이어와 헨냥이 도트가 그려진 판"></figure>
 </section>
 
-<section class="feat feat-theme" id="theme" aria-labelledby="h-theme">
-  <div class="feat-text wide">
-    <h2 id="h-theme">기분 따라 옷을 바꿔요</h2>
-    <p>밝음 · 어두움에 여러 색 테마를 입혀요. 테마마다 알림 소리와 축하 효과도 같이 바뀌고, 친구와 레벨을 올리면 그 친구의 전용 테마가 열려요.</p>
-  </div>
-  <div class="theme-pick chips" role="radiogroup" aria-label="테마 고르기" id="themePick"></div>
-  <figure class="theme-shot">
+<!-- ═════ 짙은 남회색: 테마 ═════ -->
+<section class="band band-slate" id="theme" aria-labelledby="h-theme">
+  <h2 id="h-theme">기분 따라 옷을 바꿔요</h2>
+  <p class="lead-p sub">밝음 · 어두움에 여러 색 테마를 입혀요. 테마마다 알림 소리와 축하 효과도 같이 바뀌고, 친구와 레벨을 올리면 그 친구의 전용 테마가 열려요.</p>
+  <div class="sw-btns" role="radiogroup" aria-label="테마 고르기" id="themePick"></div>
+  <figure class="screen theme-shot" data-screen="theme">
     <img id="themeImg" src="img/theme_basic_light.webp" width="960" height="800" loading="lazy" alt="베이직 밝음 테마의 넨트래커 홈 화면">
     <figcaption id="themeCap">베이직 · 깔끔하고 단정한 기본 디자인</figcaption>
   </figure>
 </section>
 
-<section class="neighbors" id="multi" aria-labelledby="h-multi">
-  <figure class="shot tall">
-    <video src="img/visit.mp4" poster="img/shot_visit.webp" width="640" height="964" muted loop playsinline autoplay preload="metadata"
-      aria-label="이웃 토마토 님의 캠핑장에 놀러 간 화면을 실제로 찍은 영상. 모닥불 곁에서 말풍선으로 인사하고 장작을 보태요"></video>
-    <figcaption>토마토 님의 캠핑장에 놀러 온 모습 (실제 두 앱으로 찍었어요)</figcaption>
-  </figure>
-  <div class="multi-text">
-    <h2 id="h-multi">이웃 캠핑장에 놀러 가요</h2>
-    <p>구글로 로그인하면 이웃을 만들 수 있어요. 각자 작업하다가 같은 모닥불 곁에 모여요.</p>
-    <ul class="runs">
-      <li><b>놀러 가기</b> 이웃 캠핑장에 내 친구를 데리고 가서 손을 흔들고 장작을 보태요.</li>
-      <li><b>말풍선 채팅</b> 친구 머리 위로 짧게 말을 주고받아요.</li>
-      <li><b>같이 듣기</b> DJ를 맡은 이웃의 음악 앱 소리를 같이 들어요.</li>
-      <li><b>음성 대화</b> 필요할 때만 마이크를 켜서 이야기해요.</li>
-      <li><b>단체 뽀모도로</b> 같은 타이머로 함께 집중하고 함께 쉬어요.</li>
-    </ul>
-    <p class="quiet">순위도 비교도 없어요. 곁에 누가 있다는 것만으로 충분하게요.</p>
+<!-- ═════ 밤하늘: 이웃 ═════ -->
+<section class="band band-night" id="multi" aria-labelledby="h-multi">
+  <div class="neighbors">
+    <figure class="shot tall">
+      <video src="img/visit.mp4" poster="img/shot_visit.webp" width="640" height="964" muted loop playsinline autoplay preload="metadata"
+        aria-label="이웃 토마토 님의 캠핑장에 놀러 간 화면을 실제로 찍은 영상. 모닥불 곁에서 말풍선으로 인사하고 장작을 보태요"></video>
+      <figcaption>토마토 님의 캠핑장에 놀러 온 모습 (실제 두 앱으로 찍었어요)</figcaption>
+    </figure>
+    <div class="multi-text">
+      <h2 id="h-multi">이웃 캠핑장에 놀러 가요</h2>
+      <p>구글로 로그인하면 이웃을 만들 수 있어요. 각자 작업하다가 같은 모닥불 곁에 모여요.</p>
+      <ul class="runs">
+        <li><b>놀러 가기</b>이웃 캠핑장에 내 친구를 데리고 가서 손을 흔들고 장작을 보태요.</li>
+        <li><b>말풍선 채팅</b>친구 머리 위로 짧게 말을 주고받아요.</li>
+        <li><b>같이 듣기</b>DJ를 맡은 이웃의 음악 앱 소리를 같이 들어요.</li>
+        <li><b>음성 대화</b>필요할 때만 마이크를 켜서 이야기해요.</li>
+        <li><b>단체 뽀모도로</b>같은 타이머로 함께 집중하고 함께 쉬어요.</li>
+      </ul>
+      <p class="quiet">순위도 비교도 없어요. 곁에 누가 있다는 것만으로 충분하게요.</p>
+    </div>
   </div>
 </section>
 
-<section class="letter" id="about" aria-labelledby="h-about">
-  <img class="letter-face" src="img/logo.png" width="56" height="56" alt="">
-  <h2 id="h-about">혼자 만들고 있어요</h2>
-  <p>안녕하세요, 넨트래커를 만드는 헤넨이에요. 작업하는 시간을 기록하고, 그 시간이 조금 덜 외롭게 흘러가도록 만들고 있어요.</p>
-  <p>모든 보상은 실제로 작업한 시간에서만 나와요. 별조각도, 모닥불도, 친구의 레벨도요. 앱이 딴짓거리가 되면 안 되니까요.</p>
-  <p>지금 보이는 그림은 임시 그림이에요. 1.0에서 제가 직접 그린 도트로 바뀌고, 그때까지는 BETA로 둘게요.</p>
-  <p>넨트래커는 AI의 도움을 받아 만들었어요. 버그나 바라는 점은 앱 안 리포트로 알려 주시면 하나씩 고쳐 갈게요.</p>
-  <p class="sign">헤넨 <span>made by henen</span></p>
-</section>
-
-<section class="faq" id="faq" aria-labelledby="h-faq">
-  <h2 id="h-faq">자주 묻는 것</h2>
-  <div class="faq-text">
-    <p><b>정말 무료인가요?</b> 네, 무료예요. 앱 안 상점은 작업해서 모은 별조각으로만 써요.</p>
-    <p><b>어떤 컴퓨터에서 쓰나요?</b> 윈도우 10 · 11 (64비트) PC에서 써요. 맥과 휴대폰 판은 아직 없어요.</p>
-    <p><b>기록은 어디에 저장되나요?</b> 로그인하지 않으면 모든 기록이 내 컴퓨터에만 있어요. 창 제목은 저장하지 않고, 사이트는 ‘유튜브’ · ‘기타 사이트’처럼 나눈 이름만 남아요.</p>
-    <p><b>로그인은 꼭 해야 하나요?</b> 아니요. 이웃 · 놀러 가기 · 기기 연동을 쓸 때만 구글로 로그인해요. 설정 → 계정에서 계정과 서버 데이터를 언제든 지울 수 있어요.</p>
-    <p><b>집중할 때 알림이 방해되지 않나요?</b> 뽀모도로 집중 중에는 알림 창을 띄우지 않아요. 친구도 조용히 응원만 해요.</p>
-    <p><b>어떤 작업에 맞나요?</b> 그림 · 웹툰 · 글 · 공부 · 개발처럼 컴퓨터로 하는 일이면 다 돼요. 클립 스튜디오 원고를 띄워 두는 레퍼런스 보드처럼 그리는 사람을 위한 기능도 있어요.</p>
-    <p><b>설치할 때 경고가 떠요.</b> 개인이 만든 앱이라 Windows가 ‘알 수 없는 게시자’라고 알릴 수 있어요. [추가 정보] → [실행]을 누르면 설치돼요.</p>
-    <p><b>업데이트는 어떻게 받나요?</b> 켤 때와 몇 시간마다 새 버전을 확인해요. 알림의 ‘업데이트’를 누르면 받아서 설치해요.</p>
-    <p><b>BETA는 무슨 뜻인가요?</b> 아직 만들어 가는 중이라는 뜻이에요. 그림은 1.0에서 새로 그린 도트로 바뀌어요.</p>
-    <p><b>버그는 어디에 알리나요?</b> 앱 안 ‘버그 리포트 · 문의’로 보내 주세요. 로그인하면 보낼 수 있어요.</p>
+<!-- ═════ 밝음: 만든 사람 ═════ -->
+<section class="band band-light" id="about" aria-labelledby="h-about">
+  <div class="letter">
+    <h2 id="h-about">제 작업에 필요해서 만들었어요</h2>
+    <p>작업 시간을 재고, 마감까지 하루 몫을 나누고, 집중과 휴식의 리듬을 잡는 데 쓰려고 만든 앱이에요. 지금도 매일 작업하면서 쓰고 있어요.</p>
+    <p>지금 보이는 그림은 임시 그림이에요. 1.0에서 직접 그린 도트로 바뀌고, 그때까지는 BETA예요.</p>
+    <p>버그나 바라는 점은 앱 안 리포트로 알려 주세요.</p>
+    <p class="sign">헤넨</p>
   </div>
 </section>
 
-<section class="cta" id="download" aria-labelledby="h-cta">
-  <div class="cta-text">
-    <h2 id="h-cta" class="giant">오늘 밤<br>불 피워요</h2>
-    <p>설치 파일을 받아 실행하면 바로 기록이 시작돼요. 로그인 없이도 써요.</p>
-    <a class="btn btn-dark" href="https://github.com/henenillust-lab/Nentracker/releases/latest/download/Nentracker_Setup.exe">무료로 받기 · 윈도우</a>
-    <p class="cta-meta">BETA 0.9.45.1 · <a href="https://github.com/henenillust-lab/Nentracker/releases/latest">GitHub 릴리스에서 보기</a></p>
+<!-- ═════ 짙은 남회색: 자주 묻는 것 ═════ -->
+<section class="band band-slate" id="faq" aria-labelledby="h-faq">
+  <div class="faq">
+    <h2 id="h-faq">자주 묻는 것</h2>
+    <div class="faq-text">
+      <p><b>정말 무료인가요?</b> 네, 무료예요. 앱 안 상점은 작업해서 모은 별조각으로만 써요.</p>
+      <p><b>어떤 컴퓨터에서 쓰나요?</b> 윈도우 10 · 11 (64비트) PC에서 써요. 맥과 휴대폰 판은 아직 없어요.</p>
+      <p><b>기록은 어디에 저장되나요?</b> 로그인하지 않으면 모든 기록이 내 컴퓨터에만 있어요. 창 제목은 저장하지 않고, 사이트는 ‘유튜브’ · ‘기타 사이트’처럼 나눈 이름만 남아요.</p>
+      <p><b>로그인은 꼭 해야 하나요?</b> 아니요. 이웃 · 놀러 가기 · 기기 연동을 쓸 때만 구글로 로그인해요. 설정 → 계정에서 계정과 서버 데이터를 언제든 지울 수 있어요.</p>
+      <p><b>집중할 때 알림이 방해되지 않나요?</b> 뽀모도로 집중 중에는 알림 창을 띄우지 않아요. 친구도 조용히 응원만 해요.</p>
+      <p><b>어떤 작업에 맞나요?</b> 그림 · 웹툰 · 글 · 공부 · 개발처럼 컴퓨터로 하는 일이면 다 돼요. 클립 스튜디오 원고를 띄워 두는 레퍼런스 보드처럼 그리는 사람을 위한 기능도 있어요.</p>
+      <p><b>설치할 때 경고가 떠요.</b> 개인이 만든 앱이라 Windows가 ‘알 수 없는 게시자’라고 알릴 수 있어요. [추가 정보] → [실행]을 누르면 설치돼요.</p>
+      <p><b>업데이트는 어떻게 받나요?</b> 켤 때와 몇 시간마다 새 버전을 확인해요. 알림의 ‘업데이트’를 누르면 받아서 설치해요.</p>
+      <p><b>BETA는 무슨 뜻인가요?</b> 아직 만들어 가는 중이라는 뜻이에요. 그림은 1.0에서 새로 그린 도트로 바뀌어요.</p>
+      <p><b>버그는 어디에 알리나요?</b> 앱 안 ‘버그 리포트 · 문의’로 보내 주세요. 로그인하면 보낼 수 있어요.</p>
+    </div>
   </div>
-  <div class="cta-pet" aria-hidden="true">
-    <p class="cta-bubble" id="ctaBubble">왔냥? 기다렸다냥!</p>
-    <img src="img/hennyang.png" width="47" height="59" alt="">
+</section>
+
+<!-- ═════ 밤하늘: 마지막 ═════ -->
+<section class="band-cta" id="download" aria-labelledby="h-cta">
+  <div class="cta">
+    <div class="cta-text">
+      <h2 id="h-cta" class="giant">오늘 밤<br>불 피워요</h2>
+      <p>설치 파일을 받아 실행하면 바로 기록이 시작돼요. 로그인 없이도 써요.</p>
+      <a class="btn btn-dark" href="https://github.com/henenillust-lab/Nentracker/releases/latest/download/Nentracker_Setup.exe">무료로 받기 · 윈도우</a>
+      <p class="cta-meta">BETA 0.9.45.1 · <a href="https://github.com/henenillust-lab/Nentracker/releases/latest">GitHub 릴리스에서 보기</a></p>
+    </div>
+    <div class="cta-pet" aria-hidden="true">
+      <p class="cta-bubble" id="ctaBubble">왔냥? 기다렸다냥!</p>
+      <img src="img/hennyang.png" width="47" height="59" alt="">
+    </div>
   </div>
 </section>
 </main>
@@ -418,7 +364,6 @@
 
 <script src="data.js"></script>
 <script src="main.js"></script>
-<script src="report.js"></script>
 <script src="features.js"></script>
 </body>
 </html>
